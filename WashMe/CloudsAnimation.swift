@@ -27,6 +27,7 @@ class Clouds {
         cloud.emissionLongitude = (90 * (.pi/180))
         
         cloud.scale = 0.6
+        
         cloud.scaleRange = 0.2
         clouds.append(cloud)
         
