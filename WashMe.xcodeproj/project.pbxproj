@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		59B19E3F1F6E818B00D11F17 /* PrecipReciever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B19E3E1F6E818B00D11F17 /* PrecipReciever.swift */; };
-		8E1FB706202EDB0B00D8C853 /* RainAnimationEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1FB705202EDB0B00D8C853 /* RainAnimationEmitter.swift */; };
 		8E1FB708202EDB6E00D8C853 /* капля.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E1FB707202EDB6E00D8C853 /* капля.png */; };
+		8E1FB70A202EDCEE00D8C853 /* RainAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1FB709202EDCEE00D8C853 /* RainAnimations.swift */; };
 		E200BCD11F8823A200EC4D33 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200BCD01F8823A200EC4D33 /* Reachability.swift */; };
 		E210A36C1F32020E002B6B30 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E210A36B1F32020E002B6B30 /* ErrorViewController.swift */; };
 		E21507C51F7ED78B005E5D4F /* Широкие.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E21507C41F7ED78B005E5D4F /* Широкие.pdf */; };
@@ -71,8 +71,8 @@
 
 /* Begin PBXFileReference section */
 		59B19E3E1F6E818B00D11F17 /* PrecipReciever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecipReciever.swift; sourceTree = "<group>"; };
-		8E1FB705202EDB0B00D8C853 /* RainAnimationEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RainAnimationEmitter.swift; path = "../../bclean-master/WashMe/RainAnimationEmitter.swift"; sourceTree = "<group>"; };
 		8E1FB707202EDB6E00D8C853 /* капля.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "капля.png"; path = "../../капля.png"; sourceTree = "<group>"; };
+		8E1FB709202EDCEE00D8C853 /* RainAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainAnimations.swift; sourceTree = "<group>"; };
 		E200BCD01F8823A200EC4D33 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E210A36B1F32020E002B6B30 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		E21507C41F7ED78B005E5D4F /* Широкие.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Широкие.pdf"; sourceTree = "<group>"; };
@@ -174,10 +174,10 @@
 				E2F5CFA41EE7291100174302 /* icons2 */,
 				E2F5CF871EE71F5F00174302 /* icons */,
 				E276834F1EE71AA6007FA117 /* AppDelegate.swift */,
+				8E1FB709202EDCEE00D8C853 /* RainAnimations.swift */,
 				E27683511EE71AA6007FA117 /* ViewController.swift */,
 				E200BCD01F8823A200EC4D33 /* Reachability.swift */,
 				E289C4991F67D017005CF358 /* PageViewViewController.swift */,
-				8E1FB705202EDB0B00D8C853 /* RainAnimationEmitter.swift */,
 				E210A36B1F32020E002B6B30 /* ErrorViewController.swift */,
 				E21507C41F7ED78B005E5D4F /* Широкие.pdf */,
 				E2F5CF811EE71B3C00174302 /* WeatherReciever.swift */,
@@ -415,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E1FB70A202EDCEE00D8C853 /* RainAnimations.swift in Sources */,
 				E200BCD11F8823A200EC4D33 /* Reachability.swift in Sources */,
 				E28B08851F9CCE3000EAD4E6 /* ViewController2.swift in Sources */,
 				E289C49A1F67D017005CF358 /* PageViewViewController.swift in Sources */,
@@ -422,7 +423,6 @@
 				E27683521EE71AA6007FA117 /* ViewController.swift in Sources */,
 				E210A36C1F32020E002B6B30 /* ErrorViewController.swift in Sources */,
 				E27683501EE71AA6007FA117 /* AppDelegate.swift in Sources */,
-				8E1FB706202EDB0B00D8C853 /* RainAnimationEmitter.swift in Sources */,
 				E2F5CF821EE71B3C00174302 /* WeatherReciever.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
