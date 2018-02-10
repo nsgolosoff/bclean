@@ -119,6 +119,7 @@ cell1.textLabel?.textAlignment = .center
              super.viewDidLoad()
 
         RainAnimations()
+        CloudsAnimation()
   
         view.backgroundColor = UIColor.clear
         tView0.backgroundColor = UIColor.clear
@@ -403,7 +404,7 @@ cell1.textLabel?.textAlignment = .center
        
         
     }
-    
+    // Rain Animation
     func RainAnimations() {
         let emitter = Emitter.get(with:#imageLiteral(resourceName: "капля.png"))
         emitter.emitterPosition = CGPoint(x: view.frame.width / 2, y:0)
@@ -412,7 +413,14 @@ cell1.textLabel?.textAlignment = .center
         
         
     }
-   
+    // Clouds animation
+    func CloudsAnimation() {
+        let clouds = Clouds.get(with: #imageLiteral(resourceName: "облако1.png"))
+        clouds.emitterPosition = CGPoint(x: -200, y:65)
+        clouds.emitterSize = CGSize(width: view.frame.width, height:2)
+        view.layer.addSublayer(clouds)
+        
+     }
     
  /*   func locationManager(_ manager: CLLocationManager,
                                   didChangeAuthorization status: CLAuthorizationStatus)
