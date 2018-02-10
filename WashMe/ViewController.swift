@@ -118,7 +118,7 @@ cell1.textLabel?.textAlignment = .center
 
              super.viewDidLoad()
 
-        
+        RainAnimations()
   
         view.backgroundColor = UIColor.clear
         tView0.backgroundColor = UIColor.clear
@@ -404,7 +404,14 @@ cell1.textLabel?.textAlignment = .center
         
     }
     
-   
+    func RainAnimations() {
+        let emitter = Emitter.get(with:#imageLiteral(resourceName: "капля.png"))
+        emitter.emitterPosition = CGPoint(x: view.frame.width / 2, y:0)
+        emitter.emitterSize = CGSize(width: view.frame.width, height:2)
+        view.layer.addSublayer(emitter)
+        
+        
+    }
    
     
  /*   func locationManager(_ manager: CLLocationManager,
