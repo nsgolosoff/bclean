@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		59B19E3F1F6E818B00D11F17 /* PrecipReciever.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B19E3E1F6E818B00D11F17 /* PrecipReciever.swift */; };
 		8E1FB70A202EDCEE00D8C853 /* RainAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1FB709202EDCEE00D8C853 /* RainAnimations.swift */; };
+		8E35E886202F11EA00C8F018 /* WashMe in Resources */ = {isa = PBXBuildFile; fileRef = 8E35E885202F11EA00C8F018 /* WashMe */; };
 		8E5E1A6D202F0CC80046E2EB /* капля.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E5E1A6B202F0CC80046E2EB /* капля.png */; };
 		8E5E1A6E202F0CC80046E2EB /* облако1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E5E1A6C202F0CC80046E2EB /* облако1.png */; };
 		8EB81C40202EE23100245D5F /* CloudsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		59B19E3E1F6E818B00D11F17 /* PrecipReciever.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrecipReciever.swift; sourceTree = "<group>"; };
 		8E1FB709202EDCEE00D8C853 /* RainAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainAnimations.swift; sourceTree = "<group>"; };
+		8E35E885202F11EA00C8F018 /* WashMe */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WashMe; sourceTree = "<group>"; };
 		8E5E1A6B202F0CC80046E2EB /* капля.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "капля.png"; sourceTree = "<group>"; };
 		8E5E1A6C202F0CC80046E2EB /* облако1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "облако1.png"; sourceTree = "<group>"; };
 		8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsAnimation.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				E2603B411EF9475000356B6D /* rain2.gif */,
 				8E5E1A6B202F0CC80046E2EB /* капля.png */,
 				8E5E1A6C202F0CC80046E2EB /* облако1.png */,
+				8E35E885202F11EA00C8F018 /* WashMe */,
 				E22508521F97EC68006CC421 /* main1.png */,
 				E27683531EE71AA6007FA117 /* Main.storyboard */,
 				E28B08841F9CCE3000EAD4E6 /* ViewController2.swift */,
@@ -374,6 +377,7 @@
 				E2F5CF9D1EE71F7000174302 /* icon76@2x.png in Resources */,
 				E2F5CF981EE71F7000174302 /* icon40@2x.png in Resources */,
 				E27141421F3376E600984011 /* lines.png in Resources */,
+				8E35E886202F11EA00C8F018 /* WashMe in Resources */,
 				E21507C51F7ED78B005E5D4F /* Широкие.pdf in Resources */,
 				E271413E1F336F4700984011 /* lines.jpg in Resources */,
 				E2F5CFA31EE720AE00174302 /* icon60.png in Resources */,
