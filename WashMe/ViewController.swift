@@ -9,51 +9,62 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
 
     @IBOutlet weak var tView0: UITableView!
     
-    var tabMas = ["Загрузка", "","","",""]
+    var tabMas = ["",""]
     
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+   
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tabMas.count
         
-        
-    {return 4}
+    }
     
      public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool
      {return false}
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = weatherAPI.getLocName()
+        label.backgroundColor = UIColor.clear
+        return label
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 300
+    }
     
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
         
         
     {
-        if (indexPath.item == 0){
+        
+       
+        
             let cell0 = tableView.dequeueReusableCell(withIdentifier: "cell0", for: indexPath)
+           
+     
 
             cell0.textLabel?.textColor = UIColor.white
+
             cell0.textLabel?.adjustsFontSizeToFitWidth = true
             cell0.backgroundColor = UIColor.clear
-           cell0.textLabel?.textAlignment = .center
-            cell0.textLabel?.text = tabMas[indexPath.item]
+            cell0.textLabel?.textAlignment = .center
+            cell0.textLabel?.text = tabMas[indexPath.row]
             print("0")
             print (indexPath)
-            return cell0
-        }
-       
-        else {
-            let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
         
-cell1.textLabel?.textAlignment = .center
-            cell1.textLabel?.adjustsFontSizeToFitWidth = true
-            
-            
-        cell1.textLabel?.textColor = UIColor.black
-            cell1.backgroundColor = UIColor.clear
+
+            return cell0
     
-        cell1.textLabel?.text = tabMas[indexPath.item]
-        return cell1
-        }
  
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
     
     
@@ -118,11 +129,14 @@ cell1.textLabel?.textAlignment = .center
 
              super.viewDidLoad()
 
-        RainAnimations()
-        CloudsAnimation()
   
         view.backgroundColor = UIColor.clear
+        
         tView0.backgroundColor = UIColor.clear
+        tView0.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        
+        
+        
         
 
         
@@ -136,7 +150,7 @@ cell1.textLabel?.textAlignment = .center
         locationManager?.delegate = self
         locationManager?.requestWhenInUseAuthorization()
         locationManager?.desiredAccuracy = kCLLocationAccuracyKilometer
-     locationManager?.distanceFilter = 100
+        locationManager?.distanceFilter = 100
         
         
 
@@ -158,11 +172,7 @@ cell1.textLabel?.textAlignment = .center
     
 
         // logo , main text , design lines starting settings
-        info.center.y = self.view.frame.width - 40
-       bClean.alpha = 0.01
-        
-        Line1.alpha = 0
-        Line2.alpha = 0
+       
         
     
        
@@ -175,57 +185,8 @@ cell1.textLabel?.textAlignment = .center
 
 
     
-    
-    
-    
-    
-    // ANIMATIONS *************
-   // logo and main text animation
-    func labelanimation () {
-        
-        UIView.animate(withDuration: 2.0, animations: {
-            self.bClean.alpha = 1
-            self.info.alpha = 1
-            
-            
-        }, completion: nil)
-    }
-    
-   
-    //main text 2nd animation
-    
-    func infoanimation () {
-        
-        
-        UIView.animate(withDuration: 0.9, delay: 1.3,  animations: {
-        
-        self.info.center.y = self.view.frame.width - 122
-        }, completion: nil)
-    
-        
-    }
-    
-    // lines animation 
-    
-    
-    func linesanimation () {
-    
-        
-        
-        UIView.animate(withDuration: 1, delay: 1.4,  animations: {
-          
-        self.Line1.alpha = 0.28
-            self.Line2.alpha = 0.28
-            
-        
-        }, completion: nil)
-    
-        
-        
-        
-    }
 
-    
+   
     
    
     
@@ -250,7 +211,7 @@ cell1.textLabel?.textAlignment = .center
             
         self.currentLocation = locations[0]
         
-        // Deactivate location updating
+//         Deactivate location updating
          locationManager?.stopUpdatingLocation()
      
         print (currentLocation?.timestamp ?? "none")
@@ -273,9 +234,9 @@ cell1.textLabel?.textAlignment = .center
             switch UICount {
             case 99?:
                
-                tabMas[0] = weatherAPI.getLocName()
+                //tabMas[0] = weatherAPI.getLocName()
                 tabMas[1] = "Сегодня лучше не мыть"
-                tabMas[3] = weatherAPI.ints()
+               // tabMas[3] = weatherAPI.ints()
                 
          
              tView0.reloadData()
@@ -286,12 +247,12 @@ cell1.textLabel?.textAlignment = .center
                 
             case 100?:
                
-                tabMas[0] = weatherAPI.getLocName()
+//                tabMas[0] = weatherAPI.getLocName()
                 tabMas[1] = "Самое время помыть"
-                tabMas[3] = weatherAPI.ints()
+               // tabMas[3] = weatherAPI.ints()
               
                
-                lname.text = weatherAPI.getLocName()
+                //lname.text = weatherAPI.getLocName()
                 tView0.reloadData()
                 
             case nil:
@@ -302,18 +263,20 @@ cell1.textLabel?.textAlignment = .center
                 
             default :
                 
-                tabMas[0] = weatherAPI.getLocName()
+//                tabMas[0] = weatherAPI.getLocName()
                 tabMas[1] = "Столько дней будет чистой:"
                 tabMas[2] = String( UICount!)
-                tabMas[3] = weatherAPI.ints()
+                //tabMas[3] = weatherAPI.ints()
             
-                lname.text = weatherAPI.getLocName()
+                //lname.text = weatherAPI.getLocName()
                 tView0.reloadData()
  
             }
          
                 
 
+//            RainAnimations()
+            CloudsAnimation()
             
                 
                 
@@ -406,17 +369,17 @@ cell1.textLabel?.textAlignment = .center
     }
     // Rain Animation
     func RainAnimations() {
-        let emitter = Emitter.get(with:#imageLiteral(resourceName: "капля.png"))
-        emitter.emitterPosition = CGPoint(x: view.frame.width / 2, y:0)
-        emitter.emitterSize = CGSize(width: view.frame.width, height:2)
-        view.layer.addSublayer(emitter)
+        let rain = Rain.get(with:#imageLiteral(resourceName: "капля.png"))
+        rain.emitterPosition = CGPoint(x: view.frame.width / 2, y:0)
+        rain.emitterSize = CGSize(width: view.frame.width * 4, height:2)
+        view.layer.addSublayer(rain)
         
         
     }
     // Clouds animation
     func CloudsAnimation() {
         let clouds = Clouds.get(with: #imageLiteral(resourceName: "облако1.png"))
-        clouds.emitterPosition = CGPoint(x: -200, y:65)
+        clouds.emitterPosition = CGPoint(x: -250, y:65)
         clouds.emitterSize = CGSize(width: view.frame.width, height:2)
         view.layer.addSublayer(clouds)
         

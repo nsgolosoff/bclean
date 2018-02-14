@@ -14,7 +14,7 @@ class ViewController2: UIViewController,UITableViewDelegate, UITableViewDataSour
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
         
         
-    {return 2}
+    {return 0}
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
         
@@ -31,7 +31,7 @@ class ViewController2: UIViewController,UITableViewDelegate, UITableViewDataSour
     
 override func viewDidLoad() {
     
-    
+   
     
     super.viewDidLoad()
 tview.backgroundColor = UIColor.clear

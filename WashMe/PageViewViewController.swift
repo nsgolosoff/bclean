@@ -82,6 +82,8 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
                 
             } else if view is UIPageControl {
                 view.backgroundColor = UIColor.clear
+                
+               
             }
             
             
