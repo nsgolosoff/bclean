@@ -9,7 +9,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
 
     @IBOutlet weak var tView0: UITableView!
     
-    var tabMas = ["",""]
+    var tabMas = ["","",""]
     
     
    
@@ -34,7 +34,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 300
     }
-    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
         
@@ -44,7 +46,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
        
         
             let cell0 = tableView.dequeueReusableCell(withIdentifier: "cell0", for: indexPath)
-           
+        
+        
      
 
             cell0.textLabel?.textColor = UIColor.white
