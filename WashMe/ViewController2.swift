@@ -8,33 +8,16 @@
 
 import Foundation
 import UIKit
-class ViewController2: UIViewController,UITableViewDelegate, UITableViewDataSource{
+class ViewController2: UIViewController{
 
-    @IBOutlet weak var tview: UITableView!
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-        
-        
-    {return 0}
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-        
-        
-    {let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = "ячейка"
-        cell.backgroundColor = UIColor.clear
-        let cell2 = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell2?.backgroundView?.backgroundColor = UIColor.clear
-      
-        cell2?.textLabel?.text = "яч"
-        
-        return cell2!}
+  
     
 override func viewDidLoad() {
     
    
     
     super.viewDidLoad()
-tview.backgroundColor = UIColor.clear
+view.backgroundColor = UIColor.clear
 
     
 

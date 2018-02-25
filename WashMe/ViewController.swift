@@ -17,22 +17,46 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         return 1
     }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tabMas.count
+       return tabMas.count
         
     }
     
      public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool
      {return false}
     
+    
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.text = weatherAPI.getLocName()
-        label.backgroundColor = UIColor.clear
-        return label
+        let headerView = UIView()
+        
+        let headerTitle: UILabel = {
+            let label = UILabel()
+            label.text = weatherAPI.getLocName()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.textAlignment = .center
+            label.numberOfLines = 0
+            return label
+        }()
+        
+        
+        headerView.addSubview(headerTitle)
+        
+        headerTitle.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+        headerTitle.leftAnchor.constraint(equalTo: headerView.leftAnchor).isActive = true
+        headerTitle.rightAnchor.constraint(equalTo: headerView.rightAnchor).isActive = true
+        
+        
+        
+        
+        headerView.backgroundColor = .clear
+        return headerView
+        
+        
+        
+       
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 300
+        return 250
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
@@ -47,23 +71,37 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         
             let cell0 = tableView.dequeueReusableCell(withIdentifier: "cell0", for: indexPath)
         
+        let text1: UILabel = {
+            let text = UILabel()
+            text.text = tabMas[indexPath.row]
+            
+            text.textAlignment = .center
+            text.translatesAutoresizingMaskIntoConstraints = false
+            text.backgroundColor = .clear
+          text.numberOfLines = 0
+            
+            
+            
+            return text
+        }()
+       
+        cell0.contentView.addSubview(text1)
         
-     
+        text1.topAnchor.constraint(equalTo: cell0.contentView.topAnchor).isActive = true
+        text1.bottomAnchor.constraint(equalTo: cell0.contentView.bottomAnchor).isActive = true
+        text1.leftAnchor.constraint(equalTo: cell0.contentView.leftAnchor, constant: 100).isActive = true
+        text1.rightAnchor.constraint(equalTo: cell0.contentView.rightAnchor, constant: -5).isActive = true
+        
 
-            cell0.textLabel?.textColor = UIColor.white
-
-            cell0.textLabel?.adjustsFontSizeToFitWidth = true
-            cell0.backgroundColor = UIColor.clear
-            cell0.textLabel?.textAlignment = .center
-            cell0.textLabel?.text = tabMas[indexPath.row]
-            print("0")
-            print (indexPath)
+        
         
 
             return cell0
     
  
     }
+    
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
@@ -137,6 +175,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         
         tView0.backgroundColor = UIColor.clear
         tView0.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        tView0.estimatedRowHeight = 84
+        tView0.rowHeight = UITableViewAutomaticDimension
+        tView0.separatorColor = UIColor(white:1, alpha: 0.65)
         
         
         
@@ -252,6 +293,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                
 //                tabMas[0] = weatherAPI.getLocName()
                 tabMas[1] = "Самое время помыть"
+                tabMas[2] = " Машина будет чистой более 5 дней"
                // tabMas[3] = weatherAPI.ints()
               
                
@@ -382,7 +424,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     // Clouds animation
     func CloudsAnimation() {
         let clouds = Clouds.get(with: #imageLiteral(resourceName: "облако1.png"))
-        clouds.emitterPosition = CGPoint(x: -250, y:65)
+        clouds.emitterPosition = CGPoint(x: -view.frame.width/2, y:70)
         clouds.emitterSize = CGSize(width: view.frame.width, height:2)
         view.layer.addSublayer(clouds)
         
