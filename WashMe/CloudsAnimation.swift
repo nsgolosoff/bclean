@@ -25,7 +25,7 @@ class Clouds {
         cloud.lifetime = 150
         cloud.velocity = CGFloat(11)
         cloud.emissionLongitude = (90 * (.pi/180))
-        
+        cloud.alphaRange = 0.3
         cloud.scale = 0.6
         
         cloud.scaleRange = 0.2

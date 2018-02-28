@@ -11,6 +11,7 @@
 		8E1FB70A202EDCEE00D8C853 /* RainAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1FB709202EDCEE00D8C853 /* RainAnimations.swift */; };
 		8E5E1A6D202F0CC80046E2EB /* капля.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E5E1A6B202F0CC80046E2EB /* капля.png */; };
 		8E5E1A6E202F0CC80046E2EB /* облако1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E5E1A6C202F0CC80046E2EB /* облако1.png */; };
+		8E9E5E3B204633AD00C9F8C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9E5E3A204633AC00C9F8C0 /* Assets.xcassets */; };
 		8EB81C40202EE23100245D5F /* CloudsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */; };
 		E200BCD11F8823A200EC4D33 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200BCD01F8823A200EC4D33 /* Reachability.swift */; };
 		E210A36C1F32020E002B6B30 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E210A36B1F32020E002B6B30 /* ErrorViewController.swift */; };
@@ -26,7 +27,6 @@
 		E27683501EE71AA6007FA117 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276834F1EE71AA6007FA117 /* AppDelegate.swift */; };
 		E27683521EE71AA6007FA117 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27683511EE71AA6007FA117 /* ViewController.swift */; };
 		E27683551EE71AA6007FA117 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27683531EE71AA6007FA117 /* Main.storyboard */; };
-		E27683571EE71AA6007FA117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E27683561EE71AA6007FA117 /* Assets.xcassets */; };
 		E276835A1EE71AA6007FA117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27683581EE71AA6007FA117 /* LaunchScreen.storyboard */; };
 		E27683651EE71AA7007FA117 /* WashMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27683641EE71AA7007FA117 /* WashMeTests.swift */; };
 		E27683701EE71AA7007FA117 /* WashMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E276836F1EE71AA7007FA117 /* WashMeUITests.swift */; };
@@ -76,6 +76,7 @@
 		8E1FB709202EDCEE00D8C853 /* RainAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainAnimations.swift; sourceTree = "<group>"; };
 		8E5E1A6B202F0CC80046E2EB /* капля.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "капля.png"; sourceTree = "<group>"; };
 		8E5E1A6C202F0CC80046E2EB /* облако1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "облако1.png"; sourceTree = "<group>"; };
+		8E9E5E3A204633AC00C9F8C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsAnimation.swift; sourceTree = "<group>"; };
 		E200BCD01F8823A200EC4D33 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E210A36B1F32020E002B6B30 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +93,6 @@
 		E276834F1EE71AA6007FA117 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E27683511EE71AA6007FA117 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E27683541EE71AA6007FA117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E27683561EE71AA6007FA117 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E27683591EE71AA6007FA117 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E276835B1EE71AA7007FA117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E27683601EE71AA7007FA117 /* WashMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WashMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,12 +187,12 @@
 				E210A36B1F32020E002B6B30 /* ErrorViewController.swift */,
 				E2F5CF811EE71B3C00174302 /* WeatherReciever.swift */,
 				59B19E3E1F6E818B00D11F17 /* PrecipReciever.swift */,
-				E27683561EE71AA6007FA117 /* Assets.xcassets */,
 				8E5E1A6C202F0CC80046E2EB /* облако1.png */,
 				E21507C41F7ED78B005E5D4F /* Широкие.pdf */,
 				E2603B411EF9475000356B6D /* rain2.gif */,
 				8E5E1A6B202F0CC80046E2EB /* капля.png */,
 				E22508521F97EC68006CC421 /* main1.png */,
+				8E9E5E3A204633AC00C9F8C0 /* Assets.xcassets */,
 				E27683531EE71AA6007FA117 /* Main.storyboard */,
 				E2F5CF851EE71C6D00174302 /* Pyi79eI6N-0.jpg */,
 				E2171E011EFC59550069C58E /* logo.png */,
@@ -377,8 +377,8 @@
 				E21507C51F7ED78B005E5D4F /* Широкие.pdf in Resources */,
 				E271413E1F336F4700984011 /* lines.jpg in Resources */,
 				E2F5CFA31EE720AE00174302 /* icon60.png in Resources */,
-				E27683571EE71AA6007FA117 /* Assets.xcassets in Resources */,
 				E2F5CF841EE71B9C00174302 /* Untitled-11.png in Resources */,
+				8E9E5E3B204633AD00C9F8C0 /* Assets.xcassets in Resources */,
 				E2FAA9211EF71D8D0092685B /* rain.jpg in Resources */,
 				E27683551EE71AA6007FA117 /* Main.storyboard in Resources */,
 				E2F5CFA21EE720AE00174302 /* icon20.png in Resources */,
@@ -592,6 +592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bClean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -606,6 +607,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bClean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

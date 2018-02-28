@@ -22,6 +22,7 @@ class Rain {
         
         let cell = CAEmitterCell ()
         cell.contents = image.cgImage
+        //cell.alphaRange = 0.8
         cell.birthRate = 400
         cell.lifetime = 50
         cell.velocity = CGFloat(600)

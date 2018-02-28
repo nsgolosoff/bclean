@@ -9,9 +9,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
 
     @IBOutlet weak var tView0: UITableView!
     
-    var tabMas = ["","",""]
+    var tabMas = ["",""]
+  
     
-    
+
    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -27,23 +28,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+       
+        
+        
         let headerView = UIView()
         
         let headerTitle: UILabel = {
             let label = UILabel()
             label.text = weatherAPI.getLocName()
+            label.font = UIFont.boldSystemFont(ofSize: 25)
+       
+            label.textColor = UIColor.white
             label.translatesAutoresizingMaskIntoConstraints = false
             label.textAlignment = .center
-            label.numberOfLines = 0
+            label.backgroundColor = .clear
+            
             return label
         }()
         
+       
         
+       
         headerView.addSubview(headerTitle)
         
-        headerTitle.topAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+        headerTitle.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -100).isActive = true
         headerTitle.leftAnchor.constraint(equalTo: headerView.leftAnchor).isActive = true
         headerTitle.rightAnchor.constraint(equalTo: headerView.rightAnchor).isActive = true
+        
         
         
         
@@ -56,12 +67,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
        
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 250
+        return view.frame.height/2.5
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+
+//
+        
+      
         return UIView()
     }
     
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return view.frame.height/6
+//    }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
         
         
@@ -74,24 +93,37 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         let text1: UILabel = {
             let text = UILabel()
             text.text = tabMas[indexPath.row]
+            text.textColor = UIColor.init(white: 1, alpha: 0.9)
+            text.font = UIFont.systemFont(ofSize: 15)
             
             text.textAlignment = .center
             text.translatesAutoresizingMaskIntoConstraints = false
             text.backgroundColor = .clear
+            
           text.numberOfLines = 0
-            
-            
-            
-            return text
+        return text }()
+        
+        let separator : UIView = {
+            let sep = UIView()
+            sep.translatesAutoresizingMaskIntoConstraints = false
+            sep.backgroundColor = UIColor.init(white: 1, alpha: 0.2)
+            return sep
         }()
-       
+        
+        //addin subviews and constraints for incell elements
         cell0.contentView.addSubview(text1)
+        cell0.contentView.addSubview(separator)
         
         text1.topAnchor.constraint(equalTo: cell0.contentView.topAnchor).isActive = true
         text1.bottomAnchor.constraint(equalTo: cell0.contentView.bottomAnchor).isActive = true
-        text1.leftAnchor.constraint(equalTo: cell0.contentView.leftAnchor, constant: 100).isActive = true
-        text1.rightAnchor.constraint(equalTo: cell0.contentView.rightAnchor, constant: -5).isActive = true
+        text1.leftAnchor.constraint(equalTo: cell0.contentView.leftAnchor, constant: 30).isActive = true
+        text1.rightAnchor.constraint(equalTo: cell0.contentView.rightAnchor, constant: -30).isActive = true
         
+        separator.topAnchor.constraint(equalTo: cell0.contentView.topAnchor).isActive = true
+        separator.leadingAnchor.constraint(equalTo: cell0.contentView.leadingAnchor, constant: 30).isActive = true
+        separator.trailingAnchor.constraint(equalTo: cell0.contentView.trailingAnchor, constant: -30).isActive = true
+        separator.heightAnchor.constraint(equalToConstant: 1).isActive = true
+     
 
         
         
@@ -100,6 +132,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     
  
     }
+    
+
     
     
     
@@ -171,13 +205,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
              super.viewDidLoad()
 
   
+        
         view.backgroundColor = UIColor.clear
+   
         
         tView0.backgroundColor = UIColor.clear
-        tView0.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        
         tView0.estimatedRowHeight = 84
         tView0.rowHeight = UITableViewAutomaticDimension
-        tView0.separatorColor = UIColor(white:1, alpha: 0.65)
+      
+        
+        
+        
         
         
         
@@ -279,7 +318,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
             case 99?:
                
                 //tabMas[0] = weatherAPI.getLocName()
-                tabMas[1] = "Сегодня лучше не мыть"
+               // imageMas[0] = #imageLiteral(resourceName: "logo.png")
+                tabMas[0] = "Сегодня лучше не мыть"
+                tabMas[1] = "Машина останется чистой всего на пару дней"
                // tabMas[3] = weatherAPI.ints()
                 
          
@@ -290,10 +331,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                 
                 
             case 100?:
-               
+               //imageMas[0] = #imageLiteral(resourceName: "logo.png")
 //                tabMas[0] = weatherAPI.getLocName()
-                tabMas[1] = "Самое время помыть"
-                tabMas[2] = " Машина будет чистой более 5 дней"
+                tabMas[0] = "Самое время помыть"
+                tabMas[1] = " Машина будет чистой более 5 дней"
                // tabMas[3] = weatherAPI.ints()
               
                
@@ -319,10 +360,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
             }
          
                 
-
-//            RainAnimations()
-            CloudsAnimation()
+           
             
+            
+            
+        //RainAnimations()
+            CloudsAnimation()
+            //CloudsAnimation1()
                 
                 
       /* ***************** OLD
@@ -424,11 +468,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     // Clouds animation
     func CloudsAnimation() {
         let clouds = Clouds.get(with: #imageLiteral(resourceName: "облако1.png"))
-        clouds.emitterPosition = CGPoint(x: -view.frame.width/2, y:70)
+        clouds.emitterPosition = CGPoint(x: -view.frame.width, y:70)
         clouds.emitterSize = CGSize(width: view.frame.width, height:2)
         view.layer.addSublayer(clouds)
         
      }
+    
+    func CloudsAnimation1() {
+        let clouds1 = Clouds.get(with: #imageLiteral(resourceName: "капля.png"))
+        clouds1.emitterPosition = CGPoint(x: -view.frame.width, y:70)
+        clouds1.emitterSize = CGSize(width: view.frame.width, height:2)
+        view.layer.addSublayer(clouds1)
+        
+    }
+    
     
  /*   func locationManager(_ manager: CLLocationManager,
                                   didChangeAuthorization status: CLAuthorizationStatus)
