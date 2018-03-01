@@ -31,6 +31,11 @@ class ErrorViewController: UIViewController {
         
         
         super.viewDidLoad()
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "main1.png")
+        self.view.insertSubview(backgroundImage, at: 0)
+        
+        
         labelanimation()
       
 PushToReloadbutton.alpha = 0.1

@@ -9,51 +9,137 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
 
     @IBOutlet weak var tView0: UITableView!
     
-    var tabMas = ["Загрузка", "","","",""]
+    var tabMas = ["",""]
+  
     
-    
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+
+   
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return tabMas.count
         
-        
-    {return 4}
+    }
     
      public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool
      {return false}
     
     
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+       
+        
+        
+        let headerView = UIView()
+        
+        let headerTitle: UILabel = {
+            let label = UILabel()
+            label.text = weatherAPI.getLocName()
+            label.font = UIFont.boldSystemFont(ofSize: 25)
+       
+            label.textColor = UIColor.white
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.textAlignment = .center
+            label.backgroundColor = .clear
+            
+            return label
+        }()
+        
+       
+        
+       
+        headerView.addSubview(headerTitle)
+        
+        headerTitle.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -100).isActive = true
+        headerTitle.leftAnchor.constraint(equalTo: headerView.leftAnchor).isActive = true
+        headerTitle.rightAnchor.constraint(equalTo: headerView.rightAnchor).isActive = true
+        
+        
+        
+        
+        
+        headerView.backgroundColor = .clear
+        return headerView
+        
+        
+        
+       
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return view.frame.height/2.5
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+
+//
+        
+      
+        return UIView()
+    }
+    
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return view.frame.height/6
+//    }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
         
         
     {
-        if (indexPath.item == 0){
-            let cell0 = tableView.dequeueReusableCell(withIdentifier: "cell0", for: indexPath)
-
-            cell0.textLabel?.textColor = UIColor.white
-            cell0.textLabel?.adjustsFontSizeToFitWidth = true
-            cell0.backgroundColor = UIColor.clear
-           cell0.textLabel?.textAlignment = .center
-            cell0.textLabel?.text = tabMas[indexPath.item]
-            print("0")
-            print (indexPath)
-            return cell0
-        }
-       
-        else {
-            let cell1 = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
         
-cell1.textLabel?.textAlignment = .center
-            cell1.textLabel?.adjustsFontSizeToFitWidth = true
+       
+        
+            let cell0 = tableView.dequeueReusableCell(withIdentifier: "cell0", for: indexPath)
+        
+        let text1: UILabel = {
+            let text = UILabel()
+            text.text = tabMas[indexPath.row]
+            text.textColor = UIColor.init(white: 1, alpha: 0.9)
+            text.font = UIFont.systemFont(ofSize: 15)
             
+            text.textAlignment = .center
+            text.translatesAutoresizingMaskIntoConstraints = false
+            text.backgroundColor = .clear
             
-        cell1.textLabel?.textColor = UIColor.black
-            cell1.backgroundColor = UIColor.clear
+          text.numberOfLines = 0
+        return text }()
+        
+        let separator : UIView = {
+            let sep = UIView()
+            sep.translatesAutoresizingMaskIntoConstraints = false
+            sep.backgroundColor = UIColor.init(white: 1, alpha: 0.2)
+            return sep
+        }()
+        
+        //addin subviews and constraints for incell elements
+        cell0.contentView.addSubview(text1)
+        cell0.contentView.addSubview(separator)
+        
+        text1.topAnchor.constraint(equalTo: cell0.contentView.topAnchor).isActive = true
+        text1.bottomAnchor.constraint(equalTo: cell0.contentView.bottomAnchor).isActive = true
+        text1.leftAnchor.constraint(equalTo: cell0.contentView.leftAnchor, constant: 30).isActive = true
+        text1.rightAnchor.constraint(equalTo: cell0.contentView.rightAnchor, constant: -30).isActive = true
+        
+        separator.topAnchor.constraint(equalTo: cell0.contentView.topAnchor).isActive = true
+        separator.leadingAnchor.constraint(equalTo: cell0.contentView.leadingAnchor, constant: 30).isActive = true
+        separator.trailingAnchor.constraint(equalTo: cell0.contentView.trailingAnchor, constant: -30).isActive = true
+        separator.heightAnchor.constraint(equalToConstant: 1).isActive = true
+     
+
+        
+        
+
+            return cell0
     
-        cell1.textLabel?.text = tabMas[indexPath.item]
-        return cell1
-        }
  
     }
     
+
+    
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
     
     
@@ -118,11 +204,22 @@ cell1.textLabel?.textAlignment = .center
 
              super.viewDidLoad()
 
-        RainAnimations()
-        CloudsAnimation()
   
+        
         view.backgroundColor = UIColor.clear
+   
+        
         tView0.backgroundColor = UIColor.clear
+        
+        tView0.estimatedRowHeight = 84
+        tView0.rowHeight = UITableViewAutomaticDimension
+      
+        
+        
+        
+        
+        
+        
         
 
         
@@ -136,7 +233,7 @@ cell1.textLabel?.textAlignment = .center
         locationManager?.delegate = self
         locationManager?.requestWhenInUseAuthorization()
         locationManager?.desiredAccuracy = kCLLocationAccuracyKilometer
-     locationManager?.distanceFilter = 100
+        locationManager?.distanceFilter = 100
         
         
 
@@ -158,11 +255,7 @@ cell1.textLabel?.textAlignment = .center
     
 
         // logo , main text , design lines starting settings
-        info.center.y = self.view.frame.width - 40
-       bClean.alpha = 0.01
-        
-        Line1.alpha = 0
-        Line2.alpha = 0
+       
         
     
        
@@ -175,57 +268,8 @@ cell1.textLabel?.textAlignment = .center
 
 
     
-    
-    
-    
-    
-    // ANIMATIONS *************
-   // logo and main text animation
-    func labelanimation () {
-        
-        UIView.animate(withDuration: 2.0, animations: {
-            self.bClean.alpha = 1
-            self.info.alpha = 1
-            
-            
-        }, completion: nil)
-    }
-    
-   
-    //main text 2nd animation
-    
-    func infoanimation () {
-        
-        
-        UIView.animate(withDuration: 0.9, delay: 1.3,  animations: {
-        
-        self.info.center.y = self.view.frame.width - 122
-        }, completion: nil)
-    
-        
-    }
-    
-    // lines animation 
-    
-    
-    func linesanimation () {
-    
-        
-        
-        UIView.animate(withDuration: 1, delay: 1.4,  animations: {
-          
-        self.Line1.alpha = 0.28
-            self.Line2.alpha = 0.28
-            
-        
-        }, completion: nil)
-    
-        
-        
-        
-    }
 
-    
+   
     
    
     
@@ -250,7 +294,7 @@ cell1.textLabel?.textAlignment = .center
             
         self.currentLocation = locations[0]
         
-        // Deactivate location updating
+//         Deactivate location updating
          locationManager?.stopUpdatingLocation()
      
         print (currentLocation?.timestamp ?? "none")
@@ -273,9 +317,11 @@ cell1.textLabel?.textAlignment = .center
             switch UICount {
             case 99?:
                
-                tabMas[0] = weatherAPI.getLocName()
-                tabMas[1] = "Сегодня лучше не мыть"
-                tabMas[3] = weatherAPI.ints()
+                //tabMas[0] = weatherAPI.getLocName()
+               // imageMas[0] = #imageLiteral(resourceName: "logo.png")
+                tabMas[0] = "Сегодня лучше не мыть"
+                tabMas[1] = "Машина останется чистой всего на пару дней"
+               // tabMas[3] = weatherAPI.ints()
                 
          
              tView0.reloadData()
@@ -285,13 +331,14 @@ cell1.textLabel?.textAlignment = .center
                 
                 
             case 100?:
-               
-                tabMas[0] = weatherAPI.getLocName()
-                tabMas[1] = "Самое время помыть"
-                tabMas[3] = weatherAPI.ints()
+               //imageMas[0] = #imageLiteral(resourceName: "logo.png")
+//                tabMas[0] = weatherAPI.getLocName()
+                tabMas[0] = "Самое время помыть"
+                tabMas[1] = " Машина будет чистой более 5 дней"
+               // tabMas[3] = weatherAPI.ints()
               
                
-                lname.text = weatherAPI.getLocName()
+                //lname.text = weatherAPI.getLocName()
                 tView0.reloadData()
                 
             case nil:
@@ -302,19 +349,24 @@ cell1.textLabel?.textAlignment = .center
                 
             default :
                 
-                tabMas[0] = weatherAPI.getLocName()
+//                tabMas[0] = weatherAPI.getLocName()
                 tabMas[1] = "Столько дней будет чистой:"
                 tabMas[2] = String( UICount!)
-                tabMas[3] = weatherAPI.ints()
+                //tabMas[3] = weatherAPI.ints()
             
-                lname.text = weatherAPI.getLocName()
+                //lname.text = weatherAPI.getLocName()
                 tView0.reloadData()
  
             }
          
                 
-
+           
             
+            
+            
+        //RainAnimations()
+            CloudsAnimation()
+            //CloudsAnimation1()
                 
                 
       /* ***************** OLD
@@ -406,21 +458,30 @@ cell1.textLabel?.textAlignment = .center
     }
     // Rain Animation
     func RainAnimations() {
-        let emitter = Emitter.get(with:#imageLiteral(resourceName: "капля.png"))
-        emitter.emitterPosition = CGPoint(x: view.frame.width / 2, y:0)
-        emitter.emitterSize = CGSize(width: view.frame.width, height:2)
-        view.layer.addSublayer(emitter)
+        let rain = Rain.get(with:#imageLiteral(resourceName: "капля.png"))
+        rain.emitterPosition = CGPoint(x: view.frame.width / 2, y:0)
+        rain.emitterSize = CGSize(width: view.frame.width * 4, height:2)
+        view.layer.addSublayer(rain)
         
         
     }
     // Clouds animation
     func CloudsAnimation() {
         let clouds = Clouds.get(with: #imageLiteral(resourceName: "облако1.png"))
-        clouds.emitterPosition = CGPoint(x: -200, y:65)
+        clouds.emitterPosition = CGPoint(x: -view.frame.width, y:70)
         clouds.emitterSize = CGSize(width: view.frame.width, height:2)
         view.layer.addSublayer(clouds)
         
      }
+    
+    func CloudsAnimation1() {
+        let clouds1 = Clouds.get(with: #imageLiteral(resourceName: "капля.png"))
+        clouds1.emitterPosition = CGPoint(x: -view.frame.width, y:70)
+        clouds1.emitterSize = CGSize(width: view.frame.width, height:2)
+        view.layer.addSublayer(clouds1)
+        
+    }
+    
     
  /*   func locationManager(_ manager: CLLocationManager,
                                   didChangeAuthorization status: CLAuthorizationStatus)

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class Emitter {
+class Rain {
     static func get(with image: UIImage) -> CAEmitterLayer {
-        let emitter = CAEmitterLayer()
-        emitter.emitterShape = kCAEmitterLayerLine
-        emitter.emitterCells = generateEmitterCells(with: image)
+        let rain = CAEmitterLayer()
+        rain.emitterShape = kCAEmitterLayerLine
+        rain.emitterCells = generateEmitterCells(with: image)
         
-        return emitter
+        return rain
     }
     
     static func generateEmitterCells(with image: UIImage) -> [CAEmitterCell] {
@@ -22,7 +22,8 @@ class Emitter {
         
         let cell = CAEmitterCell ()
         cell.contents = image.cgImage
-        cell.birthRate = 18
+        //cell.alphaRange = 0.8
+        cell.birthRate = 400
         cell.lifetime = 50
         cell.velocity = CGFloat(600)
         cell.emissionLongitude = (180 * (.pi/180))
