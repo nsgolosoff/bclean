@@ -6,6 +6,7 @@
 //  Copyright © 2017 Никита Голосов. All rights reserved.
 //
 
+
 import UIKit
 
 
@@ -15,9 +16,9 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     var imageView: UIImageView?
     
     // setting on all the View controllers
-   
     
-  
+    
+    
     let separator1: UIView = {
         let sep = UIView()
         sep.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +27,28 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         return sep
     }()
     
+    let weatherIcon: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .clear
+        button.setImage(#imageLiteral(resourceName: "AW_Stack_RGB"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.alpha = 0.7
+        button.addTarget(self, action: #selector (goToWeatherPage), for: .touchUpInside)
+        return button
+        
+    }()
+    @objc func goToWeatherPage() {
+        guard let url = URL(string: "https://www.accuweather.com") else {
+            return
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
     lazy var viewControllerList:[UIViewController] = {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -39,29 +62,31 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     }()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         
-       
+        super.viewDidLoad()
+        
+        
+        
+        
         
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "main1.png")
         self.view.insertSubview(backgroundImage, at: 0)
         
         self.dataSource = self
-      
+        
         
         
         if let firstViewController = viewControllerList.first {
             self.setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
             
         }
-
+        
         
         
     }
     
-   
+    
     
     func addParallaxToView(vw: UIView) {
         let amount = 100
@@ -87,42 +112,74 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         
         super.viewDidLayoutSubviews()
         
-       
-         let pageControl = view.subviews.filter{ $0 is UIPageControl }.first! as! UIPageControl
         
-       
-         //let scrollView = view.subviews.filter{ $0 is UIScrollView }.first! as! UIScrollView
+        
+        
+        
+        
+        
+        let pageControl = view.subviews.filter{ $0 is UIPageControl }.first! as! UIPageControl
+        //lezt scrollView = view.subviews.filter{ $0 is UIScrollView }.first! as! UIScrollView
         // remove all constraint from view that are tied to pagecontrol
-       let const = self.view.constraints.filter { $0.firstItem as? NSObject == pageControl || $0.secondItem as? NSObject == pageControl }
-       
-       self.view.removeConstraints(const)
-       
+        let const = self.view.constraints.filter { $0.firstItem as? NSObject == pageControl || $0.secondItem as? NSObject == pageControl }
+        //
+        view.removeConstraints(const)
+        //
+        pageControl.updateConstraintsIfNeeded()
         
-            // customize pagecontroll
         
-      
-    //  contraints and dots setup
-        pageControl.backgroundColor = .clear
-        pageControl.currentPageIndicatorTintColor = UIColor(red: 10.0/255, green: 163.0/255, blue: 246.0/255, alpha: 1)
-        pageControl.pageIndicatorTintColor = .gray
+        
+        //                let pageControl = view.subviews.filter{ $0 is UIPageControl }.first! as! UIPageControl
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         
-        pageControl.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        pageControl.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        //
+        // customize pagecontroll
+        
+        
+        //  contraints and dots setup
+        pageControl.backgroundColor = .clear
+        pageControl.currentPageIndicatorTintColor = UIColor(red: 10.0/255, green: 163.0/255, blue: 246.0/255, alpha: 1)
+        
+        
         if #available(iOS 11.0, *) {
             pageControl.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         } else {pageControl.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
             // Fallback on earlier versions
         }
+        pageControl.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 0).isActive = true
+        pageControl.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant: 0).isActive = true
+        
         pageControl.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
+        pageControl.pageIndicatorTintColor = UIColor.gray.withAlphaComponent(0.35)
         
-       
+        pageControl.isEnabled = false
+        
+        
+        
+        
+        
         self.view.insertSubview(separator1, aboveSubview: pageControl)
+        self.view.insertSubview(weatherIcon, aboveSubview: pageControl)
         separator1.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -4).isActive=true
         separator1.heightAnchor.constraint(equalToConstant: 1).isActive = true
         separator1.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         separator1.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
+        
+        if #available(iOS 11.0, *) {
+            weatherIcon.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -4).isActive = true
+        } else {weatherIcon.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -4).isActive=true
+            // Fallback on earlier versions
+        }
+        weatherIcon.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 15).isActive = true
+        weatherIcon.centerYAnchor.constraint(equalTo: pageControl.centerYAnchor).isActive = true
+        //weatherIcon.topAnchor.constraint(equalTo: pageControl.topAnchor, constant: 0).isActive = true
+        weatherIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        weatherIcon.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        
+        
+        
         
         
     }
@@ -132,11 +189,11 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-       
+        
         guard let vcIndex = viewControllerList.index(of: viewController) else {return nil}
         
         let previousIndex = vcIndex - 1
-//        pageControl.currentPage = previousIndex
+        //        pageControl.currentPage = previousIndex
         guard previousIndex >= 0 else {return nil}
         
         guard viewControllerList.count > previousIndex else {return nil}
@@ -151,7 +208,7 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         
         let nextIndex = vcIndex + 1
         
-//        pageControl.currentPage = nextIndex
+        //        pageControl.currentPage = nextIndex
         guard viewControllerList.count != nextIndex else { return nil}
         
         guard  viewControllerList.count > nextIndex else { return nil }
@@ -162,16 +219,17 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     
     
     
-//     page control dots funcs
-
+    //     page control dots funcs
+    
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return viewControllerList.count
     }
-
+    
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         guard let firstViewController = viewControllers?.first,
-            let firstViewControllerIndex = viewControllerList.index(of: firstViewController ) else { return 0 }
-
+            let firstViewControllerIndex = viewControllerList.index(of: firstViewController ) else { return 0}
+        
         return firstViewControllerIndex
     }
 }
+

@@ -366,7 +366,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
             
         //RainAnimations()
             CloudsAnimation()
-            //CloudsAnimation1()
+            //CloudsAnimation2()
                 
                 
       /* ***************** OLD
@@ -474,11 +474,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         
      }
     
-    func CloudsAnimation1() {
-        let clouds1 = Clouds.get(with: #imageLiteral(resourceName: "капля.png"))
-        clouds1.emitterPosition = CGPoint(x: -view.frame.width, y:70)
-        clouds1.emitterSize = CGSize(width: view.frame.width, height:2)
-        view.layer.addSublayer(clouds1)
+    func CloudsAnimation2() {
+        let clouds2 = Clouds2.get(with:#imageLiteral(resourceName: "580b585b2edbce24c47b263e.png"))
+        clouds2.emitterPosition = CGPoint(x: -view.frame.width, y:70)
+        clouds2.emitterSize = CGSize(width: view.frame.width, height:2)
+        view.layer.addSublayer(clouds2)
         
     }
     
