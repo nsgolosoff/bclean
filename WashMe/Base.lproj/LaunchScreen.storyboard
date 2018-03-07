@@ -21,16 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main1.png" translatesAutoresizingMaskIntoConstraints="NO" id="hIJ-b0-vxS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingScreen" translatesAutoresizingMaskIntoConstraints="NO" id="e3e-8f-rLc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hIJ-b0-vxS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="TJB-p4-047"/>
-                            <constraint firstItem="hIJ-b0-vxS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="bgQ-Av-0u1"/>
-                            <constraint firstAttribute="trailing" secondItem="hIJ-b0-vxS" secondAttribute="trailing" id="oeF-Q2-bxw"/>
-                            <constraint firstItem="hIJ-b0-vxS" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="ysK-Ym-2Hn"/>
+                            <constraint firstAttribute="trailing" secondItem="e3e-8f-rLc" secondAttribute="trailing" id="D9J-MG-SQ1"/>
+                            <constraint firstItem="e3e-8f-rLc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Itb-tD-X6b"/>
+                            <constraint firstItem="e3e-8f-rLc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ONM-6Y-AZg"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="e3e-8f-rLc" secondAttribute="bottom" id="rUi-7F-9FK"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="main1.png" width="640" height="1136"/>
+        <image name="loadingScreen" width="640" height="1136"/>
     </resources>
 </document>

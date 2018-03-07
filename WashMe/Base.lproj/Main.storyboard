@@ -6,14 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Cochin.ttc">
-            <string>Cochin</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Page View View Controller-->
         <scene sceneID="6eG-1t-Rgn">
@@ -105,35 +99,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adu-lD-yaX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Adu-lD-yaX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <segue destination="h21-Sj-4Es" kind="presentation" modalTransitionStyle="flipHorizontal" id="aGj-19-QqV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uec-ju-N0N">
-                                <rect key="frame" x="25" y="272" width="325" height="122"/>
-                                <string key="text">Нажмите на экран
-для повторной загрузки</string>
-                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Uec-ju-N0N" secondAttribute="trailing" constant="9" id="7Ti-wY-WQ7"/>
-                            <constraint firstItem="Uec-ju-N0N" firstAttribute="leading" secondItem="VoD-lD-EzC" secondAttribute="leadingMargin" constant="9" id="Ma4-5p-XMf"/>
-                            <constraint firstItem="Uec-ju-N0N" firstAttribute="leading" secondItem="VoD-lD-EzC" secondAttribute="leadingMargin" constant="9" id="PhZ-cy-vUg"/>
-                            <constraint firstItem="Uec-ju-N0N" firstAttribute="top" secondItem="nNP-ul-WAB" secondAttribute="bottom" constant="252" id="X8L-5e-iTl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Uec-ju-N0N" secondAttribute="trailing" constant="9" id="YtK-Qw-VEa"/>
-                            <constraint firstItem="z5F-y2-pk7" firstAttribute="top" secondItem="Uec-ju-N0N" secondAttribute="bottom" constant="273" id="vk3-Ue-W6s"/>
+                            <constraint firstItem="Adu-lD-yaX" firstAttribute="leading" secondItem="VoD-lD-EzC" secondAttribute="leading" id="THI-qt-b7B"/>
+                            <constraint firstAttribute="trailing" secondItem="Adu-lD-yaX" secondAttribute="trailing" id="Vic-ct-XZ0"/>
+                            <constraint firstItem="z5F-y2-pk7" firstAttribute="top" secondItem="Adu-lD-yaX" secondAttribute="bottom" id="Xyq-zh-HHQ"/>
+                            <constraint firstItem="Adu-lD-yaX" firstAttribute="top" secondItem="VoD-lD-EzC" secondAttribute="top" id="ofk-ZC-VcD"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="PushToReloadbutton" destination="Uec-ju-N0N" id="If0-Zh-Sjc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBZ-h8-ffs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

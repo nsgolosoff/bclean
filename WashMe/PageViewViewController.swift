@@ -15,6 +15,7 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     
     var imageView: UIImageView?
     
+  
     // setting on all the View controllers
     
     
@@ -27,6 +28,8 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         return sep
     }()
     
+    let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    let backgroundImage2 = UIImageView(frame: UIScreen.main.bounds)
     let weatherIcon: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -49,11 +52,15 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
             UIApplication.shared.openURL(url)
         }
     }
+    
+
+    
     lazy var viewControllerList:[UIViewController] = {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
-        let vc1 = sb.instantiateViewController(withIdentifier: "mainView")
+        let vc1 = sb.instantiateViewController(withIdentifier: "mainView") as! ViewController
+        vc1.varik = self
         let vc2 = sb.instantiateViewController(withIdentifier: "appinfoView")
         
         
@@ -69,11 +76,16 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         
         
         
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "main1.png")
-        self.view.insertSubview(backgroundImage, at: 0)
+       
+        backgroundImage.image = UIImage(named: "loadingScreen.png")
+
         
+        self.view.insertSubview(backgroundImage, at: 0)
+
         self.dataSource = self
+        
+        
+   
         
         
         
@@ -82,6 +94,7 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
             
         }
         
+       
         
         
     }
@@ -231,5 +244,45 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         
         return firstViewControllerIndex
     }
+    
+    func changeBackground() {
+        
+        
+        backgroundImage2.image = UIImage(named: "main1.png")
+      
+        backgroundImage2.alpha = 0
+       
+        self.view.insertSubview(backgroundImage2, aboveSubview: backgroundImage)
+        
+        self.dataSource = self
+        
+       
+            UIView.animate(withDuration: 3, animations: {
+            self.backgroundImage2.alpha = 1
+            
+
+            })
+        
+    }
+    func changeBackground2() {
+        
+        
+        backgroundImage2.image = UIImage(named: "main1.png")
+        
+        backgroundImage2.alpha = 0
+        
+        self.view.insertSubview(backgroundImage2, aboveSubview: backgroundImage)
+        
+        self.dataSource = self
+        
+        
+        UIView.animate(withDuration: 3, animations: {
+            self.backgroundImage2.alpha = 1
+            
+            
+        })
+        
+    }
+    
 }
 
