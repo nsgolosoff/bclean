@@ -9,7 +9,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     @IBOutlet weak var tView0: UITableView!
     
     var tabMas = ["",""]
-  
+    let separator : UIView = {
+        let sep = UIView()
+        sep.translatesAutoresizingMaskIntoConstraints = false
+        sep.backgroundColor = UIColor.init(white: 1, alpha: 0.2)
+        return sep
+    }()
 
     var varik: PageViewViewController?
 
@@ -102,12 +107,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
           text.numberOfLines = 0
         return text }()
         
-        let separator : UIView = {
-            let sep = UIView()
-            sep.translatesAutoresizingMaskIntoConstraints = false
-            sep.backgroundColor = UIColor.init(white: 1, alpha: 0.2)
-            return sep
-        }()
+     
         
         //addin subviews and constraints for incell elements
         cell0.contentView.addSubview(text1)
@@ -314,14 +314,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
               
              
 
-              varik?.changeBackground()
+              varik?.changeBackground2()
                 //tabMas[0] = weatherAPI.getLocName()
                // imageMas[0] = #imageLiteral(resourceName: "logo.png")
                 tabMas[0] = "Сегодня лучше не мыть"
                 tabMas[1] = "Машина останется чистой всего на пару дней"
                // tabMas[3] = weatherAPI.ints()
-              
+              RainAnimations()
+
              CloudsAnimation2()
+             
              tView0.reloadData()
                 
                 
@@ -354,8 +356,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                 varik?.changeBackground()
 //                tabMas[0] = weatherAPI.getLocName()
               
-                tabMas[1] = "Можно помыть"
-                tabMas[2] = "Машина будет чистой 3-4 дня"
+                tabMas[0] = "Можно помыть"
+                tabMas[1] = "Машина будет чистой 3-4 дня"
                 //tabMas[3] = weatherAPI.ints()
             
                 //lname.text = weatherAPI.getLocName()
@@ -418,10 +420,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     }
     // Rain Animation
     func RainAnimations() {
-        let rain = Rain.get(with:#imageLiteral(resourceName: "капля.png"))
+        let rain = Rain.get(with: #imageLiteral(resourceName: "logo.png"))
         rain.emitterPosition = CGPoint(x: view.frame.width / 2, y:0)
         rain.emitterSize = CGSize(width: view.frame.width * 4, height:2)
-        view.layer.addSublayer(rain)
+        view.layer.insertSublayer(rain, below: tView0.layer)
         
         
     }
@@ -430,7 +432,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         let clouds = Clouds.get(with: #imageLiteral(resourceName: "облако1.png"))
         clouds.emitterPosition = CGPoint(x: -view.frame.width, y:70)
         clouds.emitterSize = CGSize(width: view.frame.width, height:2)
-        view.layer.addSublayer(clouds)
+        view.layer.insertSublayer(clouds, below: tView0.layer)
         
      }
     
@@ -438,7 +440,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         let clouds2 = Clouds2.get(with:#imageLiteral(resourceName: "580b585b2edbce24c47b263e.png"))
         clouds2.emitterPosition = CGPoint(x: -view.frame.width, y:70)
         clouds2.emitterSize = CGSize(width: view.frame.width, height:2)
-        view.layer.addSublayer(clouds2)
+        view.layer.insertSublayer(clouds2, below: tView0.layer)
+       // self.view.layer.insertSublayer(self.avPlayerLayer, below: self.button1.layer)
         
     }
     

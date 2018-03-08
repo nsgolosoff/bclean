@@ -28,8 +28,9 @@ class Rain {
         cell.velocity = CGFloat(600)
         cell.emissionLongitude = (180 * (.pi/180))
         
-        cell.scale = 0.04
-        cell.scaleRange = 0.06
+        cell.scale = 0.3
+        cell.alphaRange = 0.8
+        cell.scaleRange = 0.1
         cells.append(cell)
         
         return cells
