@@ -12,6 +12,8 @@
 		8E5E1A6D202F0CC80046E2EB /* капля.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E5E1A6B202F0CC80046E2EB /* капля.png */; };
 		8E5E1A6E202F0CC80046E2EB /* облако1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E5E1A6C202F0CC80046E2EB /* облако1.png */; };
 		8E9E5E3B204633AD00C9F8C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9E5E3A204633AC00C9F8C0 /* Assets.xcassets */; };
+		8EA17834204EF90A00E31037 /* GrayCloudsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA17833204EF90A00E31037 /* GrayCloudsAnimation.swift */; };
+		8EA17836204EF93600E31037 /* 580b585b2edbce24c47b263e.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA17835204EF93600E31037 /* 580b585b2edbce24c47b263e.png */; };
 		8EB81C40202EE23100245D5F /* CloudsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */; };
 		E200BCD11F8823A200EC4D33 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200BCD01F8823A200EC4D33 /* Reachability.swift */; };
 		E210A36C1F32020E002B6B30 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E210A36B1F32020E002B6B30 /* ErrorViewController.swift */; };
@@ -77,6 +79,8 @@
 		8E5E1A6B202F0CC80046E2EB /* капля.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "капля.png"; sourceTree = "<group>"; };
 		8E5E1A6C202F0CC80046E2EB /* облако1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "облако1.png"; sourceTree = "<group>"; };
 		8E9E5E3A204633AC00C9F8C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EA17833204EF90A00E31037 /* GrayCloudsAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrayCloudsAnimation.swift; sourceTree = "<group>"; };
+		8EA17835204EF93600E31037 /* 580b585b2edbce24c47b263e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 580b585b2edbce24c47b263e.png; sourceTree = "<group>"; };
 		8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsAnimation.swift; sourceTree = "<group>"; };
 		E200BCD01F8823A200EC4D33 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E210A36B1F32020E002B6B30 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				E276834F1EE71AA6007FA117 /* AppDelegate.swift */,
 				8E1FB709202EDCEE00D8C853 /* RainAnimations.swift */,
 				8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */,
+				8EA17833204EF90A00E31037 /* GrayCloudsAnimation.swift */,
 				E27683511EE71AA6007FA117 /* ViewController.swift */,
 				E28B08841F9CCE3000EAD4E6 /* ViewController2.swift */,
 				E200BCD01F8823A200EC4D33 /* Reachability.swift */,
@@ -194,6 +199,7 @@
 				E22508521F97EC68006CC421 /* main1.png */,
 				8E9E5E3A204633AC00C9F8C0 /* Assets.xcassets */,
 				E27683531EE71AA6007FA117 /* Main.storyboard */,
+				8EA17835204EF93600E31037 /* 580b585b2edbce24c47b263e.png */,
 				E2F5CF851EE71C6D00174302 /* Pyi79eI6N-0.jpg */,
 				E2171E011EFC59550069C58E /* logo.png */,
 				E250683E1F29FE6400D6B0C0 /* dwnldscreen.jpg */,
@@ -382,6 +388,7 @@
 				E2FAA9211EF71D8D0092685B /* rain.jpg in Resources */,
 				E27683551EE71AA6007FA117 /* Main.storyboard in Resources */,
 				E2F5CFA21EE720AE00174302 /* icon20.png in Resources */,
+				8EA17836204EF93600E31037 /* 580b585b2edbce24c47b263e.png in Resources */,
 				E2F5CFA71EE7291F00174302 /* icon2-60@2x.png in Resources */,
 				E2F5CF971EE71F7000174302 /* icon40.png in Resources */,
 				E2F5CF951EE71F7000174302 /* icon-small@2x.png in Resources */,
@@ -429,6 +436,7 @@
 				E289C49A1F67D017005CF358 /* PageViewViewController.swift in Sources */,
 				59B19E3F1F6E818B00D11F17 /* PrecipReciever.swift in Sources */,
 				E27683521EE71AA6007FA117 /* ViewController.swift in Sources */,
+				8EA17834204EF90A00E31037 /* GrayCloudsAnimation.swift in Sources */,
 				E210A36C1F32020E002B6B30 /* ErrorViewController.swift in Sources */,
 				E27683501EE71AA6007FA117 /* AppDelegate.swift in Sources */,
 				E2F5CF821EE71B3C00174302 /* WeatherReciever.swift in Sources */,
