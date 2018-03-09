@@ -305,7 +305,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         //for testing when calls have expired
             
             let UICount = try? weatherAPI.general(userLocation: currentLocation!)
-          
+          //let UICount = 99
             
             switch UICount {
             case 99?:
@@ -420,9 +420,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     }
     // Rain Animation
     func RainAnimations() {
-        let rain = Rain.get(with: #imageLiteral(resourceName: "logo.png"))
-        rain.emitterPosition = CGPoint(x: view.frame.width / 2, y:0)
+        let rain = Rain.get(with: #imageLiteral(resourceName: "кап"))
+        rain.emitterPosition = CGPoint(x: view.frame.width / 2, y:view.frame.height/7)
         rain.emitterSize = CGSize(width: view.frame.width * 4, height:2)
+       
         view.layer.insertSublayer(rain, below: tView0.layer)
         
         
