@@ -331,7 +331,7 @@
 				TargetAttributes = {
 					E276834B1EE71AA6007FA117 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = NM76647W84;
+						DevelopmentTeam = MS96MJN99X;
 						ProvisioningStyle = Automatic;
 					};
 					E276835F1EE71AA7007FA117 = {
@@ -593,11 +593,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NM76647W84;
+				DEVELOPMENT_TEAM = MS96MJN99X;
 				INFOPLIST_FILE = WashMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "bClean.nik-golosov";
+				PRODUCT_BUNDLE_IDENTIFIER = bClean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -608,11 +608,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NM76647W84;
+				DEVELOPMENT_TEAM = MS96MJN99X;
 				INFOPLIST_FILE = WashMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "bClean.nik-golosov";
+				PRODUCT_BUNDLE_IDENTIFIER = bClean;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
