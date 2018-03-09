@@ -14,7 +14,7 @@ import UIKit
 class PageViewViewController: UIPageViewController, UIPageViewControllerDataSource,UIPageViewControllerDelegate {
     
     var imageView: UIImageView?
-    
+   
   
     // setting on all the View controllers
     
@@ -84,7 +84,7 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
 
         self.dataSource = self
         
-        
+    
    
         
         
@@ -122,11 +122,7 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     
     // making page control dots transparent
     override func viewDidLayoutSubviews() {
-        
-        super.viewDidLayoutSubviews()
-        
-        
-        
+ 
         
         
         
@@ -266,23 +262,25 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     }
     func changeBackground2() {
         
-        
-        backgroundImage2.image = UIImage(named: "main1.png")
+       
+        backgroundImage2.image = UIImage(named: "rainyScreen.png")
         
         backgroundImage2.alpha = 0
         
-        self.view.insertSubview(backgroundImage2, aboveSubview: backgroundImage)
+         self.view.insertSubview(backgroundImage2, aboveSubview: backgroundImage)
         
         self.dataSource = self
         
         
-        UIView.animate(withDuration: 3, animations: {
+        UIView.animate(withDuration: 1.2, animations: {
             self.backgroundImage2.alpha = 1
             
             
         })
         
+       
     }
+    
     
 }
 

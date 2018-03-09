@@ -32,13 +32,13 @@ class ErrorViewController: UIViewController {
       if (!Reachability.isConnectedToNetwork()){
             let alert = UIAlertView(title: "Интернет недоступен :(", message: "Проверьте соединение с интернетом и попробуйте снова", delegate: nil, cancelButtonTitle: "OK")
             alert.show()}
-    
+
         let status = CLLocationManager.authorizationStatus()
-        
+
         if(status != CLAuthorizationStatus.authorizedWhenInUse) {
             let alert = UIAlertView(title: "Службы геолокации недоступны", message: "Проверьте настройки геолокации и повторите снова", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
-      
+
         }
         
         
