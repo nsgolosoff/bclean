@@ -15,6 +15,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         sep.backgroundColor = UIColor.init(white: 1, alpha: 0.2)
         return sep
     }()
+    
 
     var varik: PageViewViewController?
 
@@ -177,7 +178,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     let weatherFromAPI = WeatherReciever()
     let weatherAPI = PrecipReciever()
     @IBOutlet weak var Photo: UIImageView!
-    let font = UIFont(name: "Lobster", size: 24)
+    
 
    
    public let utilityQueue = DispatchQueue.global(qos: .utility)
@@ -279,8 +280,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
    
            
     let st = CLLocationManager.authorizationStatus()
-            print("DJNDJNDJNDKLNDLKNDLKNDLKNLKDNKLDNKLNDKNDKNDKLNDL")
-            print(st)
+//            print("DJNDJNDJNDKLNDLKNDLKNDLKNLKDNKLDNKLNDKNDKNDKLNDL")
+//            print(st)
             
             
     // Save current location
