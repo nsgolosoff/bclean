@@ -26,11 +26,13 @@ class Rain {
         cell.birthRate = 400
         cell.lifetime = 50
         cell.velocity = CGFloat(600)
+        cell.velocityRange = 600
+
         cell.emissionLongitude = (180 * (.pi/180))
-        
-        cell.scale = 0.3
+        cell.yAcceleration = CGFloat(10)
+        cell.scale = 0.4
         cell.alphaRange = 0.8
-        cell.scaleRange = 0.1
+        cell.scaleRange = 0.2
         cells.append(cell)
         
         return cells
