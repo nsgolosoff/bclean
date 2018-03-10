@@ -133,7 +133,9 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         let const = self.view.constraints.filter { $0.firstItem as? NSObject == pageControl || $0.secondItem as? NSObject == pageControl }
         //
         view.removeConstraints(const)
+        //v
         //
+        
         pageControl.updateConstraintsIfNeeded()
         
         
@@ -149,7 +151,6 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         pageControl.backgroundColor = .clear
         pageControl.currentPageIndicatorTintColor = UIColor(red: 10.0/255, green: 163.0/255, blue: 246.0/255, alpha: 1)
         
-        
         if #available(iOS 11.0, *) {
             pageControl.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         } else {pageControl.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
@@ -163,31 +164,28 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         pageControl.pageIndicatorTintColor = UIColor.gray.withAlphaComponent(0.35)
         
         pageControl.isEnabled = false
-        
+       
         
         
         
         
         self.view.insertSubview(separator1, aboveSubview: pageControl)
-        self.view.insertSubview(weatherIcon, aboveSubview: pageControl)
+       self.view.insertSubview(weatherIcon, aboveSubview: pageControl)
+
+
+
         separator1.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -4).isActive=true
         separator1.heightAnchor.constraint(equalToConstant: 1).isActive = true
         separator1.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         separator1.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        
-        if #available(iOS 11.0, *) {
-            weatherIcon.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -4).isActive = true
-        } else {weatherIcon.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -4).isActive=true
-            // Fallback on earlier versions
-        }
+
+      
         weatherIcon.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 15).isActive = true
         weatherIcon.centerYAnchor.constraint(equalTo: pageControl.centerYAnchor).isActive = true
-        //weatherIcon.topAnchor.constraint(equalTo: pageControl.topAnchor, constant: 0).isActive = true
+      
         weatherIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
         weatherIcon.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        
-        
+      
         
         
         
