@@ -242,7 +242,7 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     func changeBackground() {
         
         
-        backgroundImage2.image = UIImage(named: "main1.png")
+        backgroundImage2.image = UIImage(named: "loadingScreen.png")
       
         backgroundImage2.alpha = 0
        

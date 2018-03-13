@@ -9,12 +9,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     @IBOutlet weak var tView0: UITableView!
     
     var tabMas = ["",""]
-    let separator : UIView = {
-        let sep = UIView()
-        sep.translatesAutoresizingMaskIntoConstraints = false
-        sep.backgroundColor = UIColor.init(white: 1, alpha: 0.2)
-        return sep
-    }()
+ 
     
 
     var varik: PageViewViewController?
@@ -107,6 +102,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
             
           text.numberOfLines = 0
         return text }()
+        let separator : UIView = {
+            let sep = UIView()
+            sep.translatesAutoresizingMaskIntoConstraints = false
+            sep.backgroundColor = UIColor.init(white: 1, alpha: 0.2)
+            return sep
+        }()
         
      
         
@@ -348,23 +349,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                 
             case nil:
             
-                let errorView = self.storyboard!.instantiateViewController(withIdentifier: "ErrorViewController")
-                self.show(errorView , sender: errorView)
+//                let errorView = self.storyboard!.instantiateViewController(withIdentifier: "ErrorViewController")
+//                self.show(errorView , sender: errorView)
                 
                 
-//                varik?.changeBackground2()
-//                //tabMas[0] = weatherAPI.getLocName()
-//                // imageMas[0] = #imageLiteral(resourceName: "logo.png")
-//                tabMas[0] = "Сегодня лучше не мыть"
-//                tabMas[1] = "Машина останется чистой всего на пару дней"
-//                // tabMas[3] = weatherAPI.ints()
-//                RainAnimations()
-//
-//                CloudsAnimation2()
-//
-//                tView0.reloadData()
-//
-//
+                varik?.changeBackground2()
+                //tabMas[0] = weatherAPI.getLocName()
+                // imageMas[0] = #imageLiteral(resourceName: "logo.png")
+                tabMas[0] = "Сегодня лучше не мыть"
+                tabMas[1] = "Машина останется чистой всего на пару дней"
+                // tabMas[3] = weatherAPI.ints()
+                RainAnimations()
+
+                CloudsAnimation2()
+
+                tView0.reloadData()
+
+
             default :
                 
                 varik?.changeBackground()

@@ -25,7 +25,7 @@ class Rain {
         //cell.alphaRange = 0.8
         cell.birthRate = 600
         cell.lifetime = 50
-        cell.velocity = CGFloat(270)
+        cell.velocity = CGFloat(250)
         cell.velocityRange = 70
 
         cell.emissionLongitude = (180 * (.pi/180))
