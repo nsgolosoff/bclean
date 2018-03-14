@@ -14,7 +14,7 @@ class ErrorViewController: UIViewController {
 // defining the labels
     @IBOutlet weak var PushToReloadbutton: UILabel!
     
-     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
     let errorLabel: UILabel = {
         let label = UILabel()
         label.text = "Нажмите на экран для повторной загрузки"

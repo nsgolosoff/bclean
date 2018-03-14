@@ -61,9 +61,7 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         
         let vc1 = sb.instantiateViewController(withIdentifier: "mainView") as! ViewController
         vc1.varik = self
-        let vc2 = sb.instantiateViewController(withIdentifier: "appinfoView")
-        
-        
+        let vc2 = sb.instantiateViewController(withIdentifier: "appinfoView")         
         return [vc1, vc2]
         
     }()
@@ -242,7 +240,7 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     func changeBackground() {
         
         
-        backgroundImage2.image = UIImage(named: "loadingScreen.png")
+        backgroundImage2.image = UIImage(named: "main2.png")
       
         backgroundImage2.alpha = 0
        
@@ -251,7 +249,7 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         self.dataSource = self
         
        
-            UIView.animate(withDuration: 3, animations: {
+            UIView.animate(withDuration: 1.8, animations: {
             self.backgroundImage2.alpha = 1
             
 

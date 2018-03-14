@@ -93,8 +93,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         let text1: UILabel = {
             let text = UILabel()
             text.text = tabMas[indexPath.row]
-            text.textColor = UIColor.init(white: 1, alpha: 0.9)
-            text.font = UIFont.systemFont(ofSize: 15)
+            text.textColor = .white
+            text.font = UIFont.boldSystemFont(ofSize: 15)
             
             text.textAlignment = .center
             text.translatesAutoresizingMaskIntoConstraints = false
@@ -127,7 +127,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
      
 
         
-        
+       
 
             return cell0
     
@@ -211,6 +211,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         tView0.estimatedRowHeight = 84
         tView0.rowHeight = UITableViewAutomaticDimension
         tView0.alpha = 0
+        
       
         
         
@@ -337,7 +338,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                 varik?.changeBackground()
                //imageMas[0] = #imageLiteral(resourceName: "logo.png")
 //                tabMas[0] = weatherAPI.getLocName()
-                CloudsAnimation()
+               
                 tabMas[0] = "Самое время помыть!"
                 tabMas[1] = "Машина будет чистой более 5 дней"
                // tabMas[3] = weatherAPI.ints()
@@ -348,27 +349,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                 tView0.reloadData()
                 
             case nil:
-            
+//
 //                let errorView = self.storyboard!.instantiateViewController(withIdentifier: "ErrorViewController")
 //                self.show(errorView , sender: errorView)
                 
+                varik?.changeBackground()
+                //imageMas[0] = #imageLiteral(resourceName: "logo.png")
+                //                tabMas[0] = weatherAPI.getLocName()
                 
-                varik?.changeBackground2()
-                //tabMas[0] = weatherAPI.getLocName()
-                // imageMas[0] = #imageLiteral(resourceName: "logo.png")
-                tabMas[0] = "Сегодня лучше не мыть"
-                tabMas[1] = "Машина останется чистой всего на пару дней"
+                tabMas[0] = "Самое время помыть!"
+                tabMas[1] = "Машина будет чистой более 5 дней"
                 // tabMas[3] = weatherAPI.ints()
-                RainAnimations()
-
-                CloudsAnimation2()
-
+                
+                
+                //lname.text = weatherAPI.getLocName()
+                CloudsAnimation()
                 tView0.reloadData()
+                
+                
+                
+            
 
 
             default :
                 
-                varik?.changeBackground()
+           
 //                tabMas[0] = weatherAPI.getLocName()
               
                 tabMas[0] = "Можно помыть"
