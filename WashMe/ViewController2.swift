@@ -23,6 +23,7 @@ class ViewController2: UIViewController{
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         button.addTarget(self, action: #selector (goToInstaPage), for: .touchUpInside)
+
         return button
         
     
@@ -56,6 +57,7 @@ class ViewController2: UIViewController{
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left:-2 , bottom:0 , right: 0)
         button.addTarget(self, action: #selector (goToVKPage), for: .touchUpInside)
+        
         return button
         
         
@@ -90,6 +92,7 @@ class ViewController2: UIViewController{
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 9, left:0 , bottom:13 , right: 8)
         button.addTarget(self, action: #selector (goToFBPage), for: .touchUpInside)
+        
         return button
         
         
@@ -143,6 +146,8 @@ class ViewController2: UIViewController{
        
         
         
+        
+        
 
         
        
@@ -151,6 +156,7 @@ class ViewController2: UIViewController{
         
 
         button.addTarget(self, action: #selector (cntcUs), for: .touchUpInside)
+           button.setBackgroundColor(color: UIColor.gray.withAlphaComponent(0.8), forState: .highlighted)
         return button
         
     }()
@@ -158,7 +164,8 @@ class ViewController2: UIViewController{
  let popUpControl = settupPopUp()
     
     @objc func cntcUs() {
-    
+        
+        
         popUpControl.callPopUp()
     }
     

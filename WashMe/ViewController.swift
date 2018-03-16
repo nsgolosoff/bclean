@@ -462,8 +462,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         clouds2.emitterPosition = CGPoint(x: -view.frame.width, y:70)
         clouds2.emitterSize = CGSize(width: view.frame.width, height:2)
         view.layer.insertSublayer(clouds2, below: tView0.layer)
-       // self.view.layer.insertSublayer(self.avPlayerLayer, below: self.button1.layer)
-        
+    
     }
     
     
