@@ -95,6 +95,8 @@ class ViewController2: UIViewController{
         
         
     }()
+    
+    
     @objc func goToFBPage() {
         
     
@@ -120,16 +122,47 @@ class ViewController2: UIViewController{
         button.layer.borderWidth = 1
         button.clipsToBounds = true
         button.backgroundColor = .clear
+        button.imageView?.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.translatesAutoresizingMaskIntoConstraints = false
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.textAlignment = .center
+        
+        
         button.setTitle("Написать разработчикам", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.tintColor = .white
-        button.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -40)
-        button.addTarget(self, action: #selector (goToFBPage), for: .touchUpInside)
+        
+       
+        button.setImage(#imageLiteral(resourceName: "pencil1"), for: .normal)
+       
+        button.imageView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        button.imageView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        button.imageView?.leftAnchor.constraint(equalTo: button.leftAnchor, constant: 50).isActive = true
+        
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left:0 , bottom:0 , right: 10)
+       
+        
+        
+
+        
+       
+        
+        
+        
+
+        button.addTarget(self, action: #selector (cntcUs), for: .touchUpInside)
         return button
         
     }()
     
+ let popUpControl = settupPopUp()
     
+    @objc func cntcUs() {
+    
+        popUpControl.callPopUp()
+    }
+    
+   
 override func viewDidLoad() {
     
    
