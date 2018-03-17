@@ -9,6 +9,7 @@
 import UIKit
 
 class Rain {
+    
     static func get(with image: UIImage) -> CAEmitterLayer {
         let rain = CAEmitterLayer()
         rain.emitterShape = kCAEmitterLayerLine
@@ -33,6 +34,7 @@ class Rain {
         cell.scale = 0.2
         cell.alphaRange = 0.8
         cell.scaleRange = 0.1
+        
         cells.append(cell)
         
         return cells

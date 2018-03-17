@@ -313,7 +313,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
             switch UICount {
             case 99?:
                
-             
+           
               
              
 
@@ -323,7 +323,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                 tabMas[0] = "Сегодня лучше не мыть"
                 tabMas[1] = "Машина останется чистой всего на пару дней"
                // tabMas[3] = weatherAPI.ints()
-              RainAnimations()
+             RemoveRain()
+             removeGrayClouds()
+              
+             RainAnimations()
+              
 
              CloudsAnimation2()
              
@@ -345,6 +349,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
               
                
                 //lname.text = weatherAPI.getLocName()
+                RemoveClouds()
                 CloudsAnimation()
                 tView0.reloadData()
                 
@@ -381,6 +386,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                 //tabMas[3] = weatherAPI.ints()
             
                 //lname.text = weatherAPI.getLocName()
+                RemoveClouds()
                 CloudsAnimation()
                 tView0.reloadData()
                 
@@ -439,68 +445,58 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         
     }
     // Rain Animation
+    let rain = Rain.get(with: #imageLiteral(resourceName: "кап"))
     func RainAnimations() {
-        let rain = Rain.get(with: #imageLiteral(resourceName: "кап"))
+        
         rain.emitterPosition = CGPoint(x: view.frame.width / 2, y:view.frame.height/7)
         rain.emitterSize = CGSize(width: view.frame.width * 4, height:2)
        
         view.layer.insertSublayer(rain, below: tView0.layer)
         
         
+        
+        
     }
+    
+    func RemoveRain() {
+        
+     rain.removeFromSuperlayer()
+        
+    }
+    
+
+    
     // Clouds animation
+    let clouds = Clouds.get(with: #imageLiteral(resourceName: "облако1.png"))
     func CloudsAnimation() {
-        let clouds = Clouds.get(with: #imageLiteral(resourceName: "облако1.png"))
+        
         clouds.emitterPosition = CGPoint(x: -view.frame.width, y:70)
         clouds.emitterSize = CGSize(width: view.frame.width, height:2)
         view.layer.insertSublayer(clouds, below: tView0.layer)
         
      }
     
-    func CloudsAnimation2() {
-        let clouds2 = Clouds2.get(with:#imageLiteral(resourceName: "580b585b2edbce24c47b263e.png"))
-        clouds2.emitterPosition = CGPoint(x: -view.frame.width, y:70)
-        clouds2.emitterSize = CGSize(width: view.frame.width, height:2)
-        view.layer.insertSublayer(clouds2, below: tView0.layer)
-    
+    func RemoveClouds () {
+        clouds.removeFromSuperlayer()
     }
     
     
- /*   func locationManager(_ manager: CLLocationManager,
-                                  didChangeAuthorization status: CLAuthorizationStatus)
+    // grat clouds animation
+     let clouds2 = Clouds2.get(with:#imageLiteral(resourceName: "580b585b2edbce24c47b263e.png"))
+    func CloudsAnimation2() {
+       
+        clouds2.emitterPosition = CGPoint(x: -view.frame.width, y:70)
+        clouds2.emitterSize = CGSize(width: view.frame.width, height:2)
+        view.layer.insertSublayer(clouds2, below: tView0.layer)
+        
     
+    }
     
-    {
-        var shouldIAllow = false
-        var locationStatus = " "
-        switch status {
-        case CLAuthorizationStatus.restricted:
-            locationStatus = "Restricted Access to location"
-        case CLAuthorizationStatus.denied:
-            locationStatus = "User denied access to location"
-        case CLAuthorizationStatus.notDetermined:
-            locationStatus = "Status not determined"
-        default:
-            locationStatus = "Allowed to location Access"
-            shouldIAllow = true
-        }
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LabelHasbeenUpdated"), object: nil)
-        
-        
-        
-        if (shouldIAllow == true) {
-            NSLog("Location to Allowed")
-            // Start location services
-            locationManager?.startUpdatingLocation()
-        } else {
-            NSLog("Denied access: \(locationStatus)")
+    func removeGrayClouds() {
+        clouds2.removeFromSuperlayer()
+    }
+    
 
-            let alert = UIAlertView(title: "Службы геолокации отключены", message: "Разрешите программе bClean использовать геоданные", delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
-            
-        }}
-    
-    */
     
 }
 
