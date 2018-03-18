@@ -14,6 +14,7 @@
 		8E9E5E3B204633AD00C9F8C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9E5E3A204633AC00C9F8C0 /* Assets.xcassets */; };
 		8EA17834204EF90A00E31037 /* GrayCloudsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA17833204EF90A00E31037 /* GrayCloudsAnimation.swift */; };
 		8EA17836204EF93600E31037 /* 580b585b2edbce24c47b263e.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EA17835204EF93600E31037 /* 580b585b2edbce24c47b263e.png */; };
+		8EAA7406205E6CA400B81AE2 /* massangersSetupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA7405205E6CA400B81AE2 /* massangersSetupCell.swift */; };
 		8EAEF1C4205C6CE80078B4AB /* buttonExtancion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEF1C3205C6CE80078B4AB /* buttonExtancion.swift */; };
 		8EB81C40202EE23100245D5F /* CloudsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */; };
 		8EE797332059D3BF00D1A62D /* popUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE797322059D3BF00D1A62D /* popUpController.swift */; };
@@ -82,6 +83,7 @@
 		8E9E5E3A204633AC00C9F8C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8EA17833204EF90A00E31037 /* GrayCloudsAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrayCloudsAnimation.swift; sourceTree = "<group>"; };
 		8EA17835204EF93600E31037 /* 580b585b2edbce24c47b263e.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 580b585b2edbce24c47b263e.png; sourceTree = "<group>"; };
+		8EAA7405205E6CA400B81AE2 /* massangersSetupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = massangersSetupCell.swift; sourceTree = "<group>"; };
 		8EAEF1C3205C6CE80078B4AB /* buttonExtancion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonExtancion.swift; sourceTree = "<group>"; };
 		8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsAnimation.swift; sourceTree = "<group>"; };
 		8EE797322059D3BF00D1A62D /* popUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popUpController.swift; sourceTree = "<group>"; };
@@ -190,12 +192,13 @@
 				E27683511EE71AA6007FA117 /* ViewController.swift */,
 				E28B08841F9CCE3000EAD4E6 /* ViewController2.swift */,
 				8EE797322059D3BF00D1A62D /* popUpController.swift */,
-				8EAEF1C3205C6CE80078B4AB /* buttonExtancion.swift */,
+				8EAA7405205E6CA400B81AE2 /* massangersSetupCell.swift */,
 				E200BCD01F8823A200EC4D33 /* Reachability.swift */,
 				E289C4991F67D017005CF358 /* PageViewViewController.swift */,
 				E2F5CF811EE71B3C00174302 /* WeatherReciever.swift */,
 				59B19E3E1F6E818B00D11F17 /* PrecipReciever.swift */,
 				E210A36B1F32020E002B6B30 /* ErrorViewController.swift */,
+				8EAEF1C3205C6CE80078B4AB /* buttonExtancion.swift */,
 				8E5E1A6C202F0CC80046E2EB /* облако1.png */,
 				E21507C41F7ED78B005E5D4F /* Широкие.pdf */,
 				E2603B411EF9475000356B6D /* rain2.gif */,
@@ -438,6 +441,7 @@
 				E28B08851F9CCE3000EAD4E6 /* ViewController2.swift in Sources */,
 				E289C49A1F67D017005CF358 /* PageViewViewController.swift in Sources */,
 				59B19E3F1F6E818B00D11F17 /* PrecipReciever.swift in Sources */,
+				8EAA7406205E6CA400B81AE2 /* massangersSetupCell.swift in Sources */,
 				8EAEF1C4205C6CE80078B4AB /* buttonExtancion.swift in Sources */,
 				E27683521EE71AA6007FA117 /* ViewController.swift in Sources */,
 				8EA17834204EF90A00E31037 /* GrayCloudsAnimation.swift in Sources */,

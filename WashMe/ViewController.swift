@@ -349,27 +349,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
               
                
                 //lname.text = weatherAPI.getLocName()
-                RemoveClouds()
-                CloudsAnimation()
+                 RemoveClouds()
+                 CloudsAnimation()
+           
+               
                 tView0.reloadData()
                 
             case nil:
 
-                let errorView = self.storyboard!.instantiateViewController(withIdentifier: "ErrorViewController")
-                self.show(errorView , sender: errorView)
+//                let errorView = self.storyboard!.instantiateViewController(withIdentifier: "ErrorViewController")
+//                self.show(errorView , sender: errorView)
                 
-//                varik?.changeBackground()
-//                //imageMas[0] = #imageLiteral(resourceName: "logo.png")
-//                //                tabMas[0] = weatherAPI.getLocName()
-//                
-//                tabMas[0] = "Самое время помыть!"
-//                tabMas[1] = "Машина будет чистой более 5 дней"
-//                // tabMas[3] = weatherAPI.ints()
-//                
-//                
-//                //lname.text = weatherAPI.getLocName()
-//                CloudsAnimation()
-//                tView0.reloadData()
+                varik?.changeBackground()
+                //imageMas[0] = #imageLiteral(resourceName: "logo.png")
+                //                tabMas[0] = weatherAPI.getLocName()
+                
+                tabMas[0] = "Самое время помыть!"
+                tabMas[1] = "Машина будет чистой более 5 дней"
+                // tabMas[3] = weatherAPI.ints()
+                
+                
+                //lname.text = weatherAPI.getLocName()
+                RemoveClouds()
+                CloudsAnimation()
+                
+                
+                tView0.reloadData()
                 
                 
                 

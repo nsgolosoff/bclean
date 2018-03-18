@@ -122,7 +122,7 @@ class ViewController2: UIViewController{
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.cornerRadius = 18
-        button.layer.borderWidth = 1
+        button.layer.borderWidth = 0.5
         button.clipsToBounds = true
         button.backgroundColor = .clear
         button.imageView?.translatesAutoresizingMaskIntoConstraints = false
@@ -156,7 +156,7 @@ class ViewController2: UIViewController{
         
 
         button.addTarget(self, action: #selector (cntcUs), for: .touchUpInside)
-           button.setBackgroundColor(color: UIColor.gray.withAlphaComponent(0.8), forState: .highlighted)
+           button.setBackgroundColor(color: UIColor.black.withAlphaComponent(0.05), forState: .highlighted)
         return button
         
     }()
