@@ -11,10 +11,12 @@ import UIKit
 class Setting: NSObject {
     let name: String
     let imageName: String
+    let url: String
     
-    init(name: String, imageName: String) {
+    init(name: String, imageName: String, url: String) {
         self.name = name
         self.imageName = imageName
+        self.url = url
     }
     
     
@@ -39,8 +41,8 @@ class IconsView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICo
        
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-//        layout.minimumLineSpacing = 0
-//        layout.minimumInteritemSpacing = 0
+        
+
         return cv
     }()
     
@@ -49,8 +51,8 @@ class IconsView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICo
     
     
     let settings: [Setting] = {
-        return [ Setting(name: "WhatsApp", imageName: "whatsappLogo.png"),
-                Setting(name: "Mail", imageName: "mailIcon.png")]
+        return [ Setting(name: "WhatsApp", imageName: "whatsappLogo.png", url:"https://api.whatsapp.com/send?phone=79253193186&text=bClean%20App"),
+                 Setting(name: "Mail", imageName: "mailIcon.png", url: "mailto:app@bclean.com?subject=bClean%20App")]
     }()
     
     override init(frame: CGRect) {
@@ -73,7 +75,7 @@ class IconsView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICo
     
   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return settings.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,6 +90,29 @@ class IconsView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICo
         
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let setting = settings[indexPath.item]
+        
+        openUrl (setting: setting)
+        
+        
+    }
+    
+   
+    func openUrl (setting: Setting) {
+        
+        guard let url = URL(string: setting.url) else {
+            return
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+
   
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -99,6 +124,16 @@ class IconsView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICo
 
 class  MenuCell: UICollectionViewCell {
     
+    override var isHighlighted: Bool {
+        didSet {
+            IconLabel.textColor = isHighlighted ? UIColor(red: 10.0/255, green: 163.0/255, blue: 246.0/255, alpha: 1): UIColor.black.withAlphaComponent(0.75)
+            imageView.alpha = isHighlighted ? 0.8 : 1
+            
+            
+            
+        }
+        
+    }
     var setting: Setting? {
         didSet {
             IconLabel.text = setting?.name
@@ -111,10 +146,13 @@ class  MenuCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let imagev = UIImageView()
-        imagev.image = UIImage(named: "whatsappLogo.png")
+        
+        
+        
         imagev.translatesAutoresizingMaskIntoConstraints = false
       imagev.contentMode = .scaleAspectFit
         imagev.backgroundColor = .clear
+        
         
 
         
@@ -124,7 +162,7 @@ class  MenuCell: UICollectionViewCell {
     
     let IconLabel: UILabel = {
         let label = UILabel()
-        label.text = "WhatsApp"
+     
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor = UIColor.black.withAlphaComponent(0.75)
@@ -132,10 +170,14 @@ class  MenuCell: UICollectionViewCell {
         return label
     }()
     
+   
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-      
+       
        backgroundColor = .clear
+       // self.frame = CGRect(x: 0, y: 50, width: 90, height: 100)
+
 
         setupViews()
       
@@ -146,8 +188,7 @@ class  MenuCell: UICollectionViewCell {
     func setupViews () {
         
         addSubview(imageView)
-     
-        addSubview(IconLabel)
+             addSubview(IconLabel)
         
         imageView.topAnchor.constraint(equalTo: self.topAnchor ,constant: 0 ).isActive = true
         imageView.leftAnchor.constraint(equalTo: self.leftAnchor,constant: 5 ).isActive = true

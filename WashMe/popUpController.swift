@@ -22,6 +22,7 @@ class settupPopUp: NSObject {
        
         return view
     }()
+    
     let cancelButton : UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
@@ -35,19 +36,11 @@ class settupPopUp: NSObject {
         button.setTitleColor(UIColor(red: 10.0/255, green: 163.0/255, blue: 246.0/255, alpha: 1), for: .normal)
         button.tintColor = .white
         button.setBackgroundColor(color: UIColor.gray.withAlphaComponent(0.1), forState: .highlighted)
-        
-       
-      
-    
-      
-        
+
         return button
     }()
     
   
-    
- 
-    
     
     @objc func callPopUp() {
         
@@ -59,40 +52,20 @@ class settupPopUp: NSObject {
             blackview.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (ColorBack)))
             cancelButton.addTarget(self, action: #selector (ColorBack), for: .touchUpInside)
             
-            
-            
-      
-            
-            
-            
+          
             window.addSubview(blackview)
             window.addSubview(iconsMenu)
 
             window.addSubview(cancelButton)
             
-
-          
-            
-           
             blackview.frame = window.frame
 
-       
-            
-
-              iconsMenu.frame = CGRect(x: 7, y: window.frame.height, width: window.frame.width-14, height: 150)
+             iconsMenu.frame = CGRect(x: 7, y: window.frame.height, width: window.frame.width-14, height: 150)
           
              cancelButton.frame = CGRect(x: 7, y: window.frame.height+160 , width: window.frame.width-14, height: 50)
           
-          
-            
-           
       cancelButton.layoutIfNeeded()
-            
-            
-            
-            
-//     setupMassengers()
-         
+       
             UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.blackview.alpha = 0.3
                
@@ -129,19 +102,6 @@ class settupPopUp: NSObject {
     }
     
   
-//    func  setupMassengers() {
-//        iconsMenu.addSubview(whatsAppbutton)
-//        iconsMenu.addSubview(telegrammbutton)
-//
-//
-//        whatsAppbutton.leftAnchor.constraint(equalTo: iconsMenu.leftAnchor, constant: 11).isActive = true
-//        whatsAppbutton.topAnchor.constraint(equalTo: iconsMenu.topAnchor, constant: 11).isActive = true
-//        whatsAppbutton.bottomAnchor.constraint(equalTo: iconsMenu.bottomAnchor, constant: -11).isActive = true
-//        whatsAppbutton.widthAnchor.constraint(equalToConstant: 100).isActive = true
-//
-//
-//
-//    }
 
     func  ColorBack () {
         
@@ -157,7 +117,6 @@ class settupPopUp: NSObject {
 
                 self.iconsMenu.frame = CGRect(x: 7, y: window.frame.height, width: window.frame.width-14, height: 150)
 
-                
             }
             
          
@@ -176,17 +135,10 @@ class settupPopUp: NSObject {
         super.init()
        
         
-     
-      
-//        whatsAppbutton.titleLabel?.frame = CGRect(x:18, y: iconsMenu.frame.height+13, width: 100, height:15)
-//        setupMassengers()
+
         
     }
-    
-    
-    
-    
-    
+ 
     
 }
 
