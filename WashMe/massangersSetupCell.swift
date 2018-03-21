@@ -32,6 +32,7 @@ class IconsView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICo
         cv.backgroundColor = .clear
         cv.delegate = self
         cv.dataSource = self
+        
       
         cv.alwaysBounceHorizontal = true
        
@@ -52,7 +53,11 @@ class IconsView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICo
     
     let settings: [Setting] = {
         return [ Setting(name: "WhatsApp", imageName: "whatsappLogo.png", url:"https://api.whatsapp.com/send?phone=79253193186&text=bClean%20App"),
-                 Setting(name: "Mail", imageName: "mailIcon.png", url: "mailto:app@bclean.com?subject=bClean%20App")]
+                  Setting(name: "Telegram", imageName: "telegramIcon.png", url:"https://t.me/bcleanapp"),
+                 Setting(name: "Mail", imageName: "mailIcon.png", url: "mailto:app@bclean.com?subject=bClean%20App"),
+                 Setting(name: "VK", imageName: "vkLogo.png", url: "https://vk.com/write37593290"),
+                 Setting(name: "Messenger", imageName: "fbmessenger.png", url: "https://www.facebook.com/messages/t/bcleanapp")
+        ]
     }()
     
     override init(frame: CGRect) {

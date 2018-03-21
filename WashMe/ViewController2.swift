@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-class ViewController2: UIViewController{
+class ViewController2: UIViewController {
+    
     
     let instaButton: UIButton = {
         let button = UIButton()
@@ -17,6 +18,7 @@ class ViewController2: UIViewController{
         button.layer.cornerRadius = 25
         button.layer.borderWidth = 1
         button.clipsToBounds = true
+        button.showsTouchWhenHighlighted = true
         button.backgroundColor = .clear
         button.tintColor = .white
         button.setImage(#imageLiteral(resourceName: "glyph-logo_May2016"), for: .normal)
@@ -52,6 +54,7 @@ class ViewController2: UIViewController{
         button.layer.borderWidth = 1
         button.clipsToBounds = true
         button.backgroundColor = .clear
+        button.showsTouchWhenHighlighted = true
         button.tintColor = .white
         button.setImage(#imageLiteral(resourceName: "VK_Logo"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
@@ -86,6 +89,7 @@ class ViewController2: UIViewController{
         button.layer.cornerRadius = 25
         button.layer.borderWidth = 1
         button.clipsToBounds = true
+        button.showsTouchWhenHighlighted = true
         button.backgroundColor = .clear
         button.tintColor = .white
         button.setImage(#imageLiteral(resourceName: "FB_logo"), for: .normal)
@@ -131,9 +135,8 @@ class ViewController2: UIViewController{
         button.titleLabel?.textAlignment = .center
         
         
-        button.setTitle("Написать разработчикам", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        button.tintColor = .white
+        
+      
         
        
         button.setImage(#imageLiteral(resourceName: "pencil1"), for: .normal)
@@ -141,22 +144,15 @@ class ViewController2: UIViewController{
         button.imageView?.heightAnchor.constraint(equalToConstant: 20).isActive = true
         button.imageView?.widthAnchor.constraint(equalToConstant: 20).isActive = true
         button.imageView?.leftAnchor.constraint(equalTo: button.leftAnchor, constant: 50).isActive = true
-        
+        button.setTitle("Написать разработчикам", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left:0 , bottom:0 , right: 10)
-       
-        
-        
-        
-        
-
-        
-       
-        
-        
+        button.setBackgroundColor(color: UIColor.black.withAlphaComponent(0.05), forState: .highlighted)
+        button.tintColor = .white
         
 
         button.addTarget(self, action: #selector (cntcUs), for: .touchUpInside)
-           button.setBackgroundColor(color: UIColor.black.withAlphaComponent(0.05), forState: .highlighted)
+           
         return button
         
     }()
@@ -176,6 +172,8 @@ override func viewDidLoad() {
     
     super.viewDidLoad()
 view.backgroundColor = UIColor.clear
+    
+    
     setupButtonViews()
 
 
@@ -189,6 +187,7 @@ view.backgroundColor = UIColor.clear
         view.addSubview(VKButton)
         view.addSubview(FBButton)
         view.addSubview(contactUS)
+       
         
         instaButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -30).isActive = true
         instaButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -210,9 +209,7 @@ view.backgroundColor = UIColor.clear
         contactUS.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30).isActive = true
         contactUS.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30).isActive = true
         contactUS.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-  
-        
+     
     }
     
 

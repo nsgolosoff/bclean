@@ -41,6 +41,18 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         return button
         
     }()
+    let InfoIcon: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .clear
+        button.setImage(#imageLiteral(resourceName: "AW_Stack_RGB"), for: .normal)
+        
+        button.imageView?.contentMode = .scaleAspectFit
+        button.alpha = 1
+       
+        return button
+        
+    }()
     @objc func goToWeatherPage() {
         guard let url = URL(string: "https://www.accuweather.com") else {
             return
@@ -69,10 +81,6 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        
-        
-        
         
        
         backgroundImage.image = UIImage(named: "loadingScreen.png")
@@ -168,7 +176,8 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         
         
         self.view.insertSubview(separator1, aboveSubview: pageControl)
-       self.view.insertSubview(weatherIcon, aboveSubview: pageControl)
+        self.view.insertSubview(weatherIcon, aboveSubview: pageControl)
+        self.view.insertSubview(InfoIcon, aboveSubview: pageControl)
 
 
 
@@ -183,6 +192,13 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
       
         weatherIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
         weatherIcon.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        
+        InfoIcon.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant: -15).isActive = true
+        InfoIcon.centerYAnchor.constraint(equalTo: pageControl.centerYAnchor).isActive = true
+        
+        InfoIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        InfoIcon.heightAnchor.constraint(equalToConstant: 40).isActive = true
       
         
         
