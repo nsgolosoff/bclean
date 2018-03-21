@@ -44,6 +44,8 @@ class settupPopUp: NSObject {
     
     @objc func callPopUp() {
         
+        cancelButton.alpha = 1
+        iconsMenu.alpha = 1
         
         if let window = UIApplication.shared.keyWindow {
             
@@ -57,6 +59,7 @@ class settupPopUp: NSObject {
             window.addSubview(iconsMenu)
 
             window.addSubview(cancelButton)
+            
             
             blackview.frame = window.frame
 
@@ -117,11 +120,17 @@ class settupPopUp: NSObject {
 
                 self.iconsMenu.frame = CGRect(x: 7, y: window.frame.height, width: window.frame.width-14, height: 150)
 
+                window.layoutIfNeeded()
             }
             
          
             
-        }, completion: nil)
+        }) {( completed: Bool) in
+            
+//            
+           self.iconsMenu.alpha = 0
+          self.cancelButton.alpha = 0
+        }
         
   
     }

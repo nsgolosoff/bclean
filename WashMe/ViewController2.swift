@@ -17,7 +17,7 @@ class ViewController2: UIViewController {
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.cornerRadius = 25
         button.layer.borderWidth = 1
-        button.clipsToBounds = true
+        button.layer.masksToBounds = true
         button.showsTouchWhenHighlighted = true
         button.backgroundColor = .clear
         button.tintColor = .white
@@ -52,7 +52,7 @@ class ViewController2: UIViewController {
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.cornerRadius = 25
         button.layer.borderWidth = 1
-        button.clipsToBounds = true
+        button.layer.masksToBounds = true
         button.backgroundColor = .clear
         button.showsTouchWhenHighlighted = true
         button.tintColor = .white
@@ -88,7 +88,7 @@ class ViewController2: UIViewController {
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.cornerRadius = 25
         button.layer.borderWidth = 1
-        button.clipsToBounds = true
+        button.layer.masksToBounds = true
         button.showsTouchWhenHighlighted = true
         button.backgroundColor = .clear
         button.tintColor = .white
@@ -102,6 +102,7 @@ class ViewController2: UIViewController {
         
         
     }()
+    
     
     
     @objc func goToFBPage() {
@@ -127,7 +128,7 @@ class ViewController2: UIViewController {
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.cornerRadius = 18
         button.layer.borderWidth = 0.5
-        button.clipsToBounds = true
+        button.layer.masksToBounds = true
         button.backgroundColor = .clear
         button.imageView?.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.translatesAutoresizingMaskIntoConstraints = false
@@ -160,7 +161,6 @@ class ViewController2: UIViewController {
  let popUpControl = settupPopUp()
     
     @objc func cntcUs() {
-        
         
         popUpControl.callPopUp()
     }

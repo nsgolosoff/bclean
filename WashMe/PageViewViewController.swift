@@ -45,14 +45,28 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .clear
-        button.setImage(#imageLiteral(resourceName: "AW_Stack_RGB"), for: .normal)
-        
+        button.setImage(#imageLiteral(resourceName: "Slice 1"), for: .normal)
+        button.layer.cornerRadius = 17
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor(red: 10.0/255, green: 163.0/255, blue: 246.0/255, alpha: 1).cgColor
+        button.layer.masksToBounds = true
         button.imageView?.contentMode = .scaleAspectFit
         button.alpha = 1
-       
+        button.imageEdgeInsets = UIEdgeInsets(top: 8, left:0 , bottom:8 , right: 0)
+        button.setBackgroundColor(color: UIColor.gray.withAlphaComponent(0.35), forState: .highlighted)
+        button.addTarget(self, action: #selector (openWalkthru), for: .touchUpInside)
         return button
         
     }()
+    
+    func openWalkthru() {
+ 
+        let layout = UICollectionViewFlowLayout()
+        let walthThru = WalkThru(collectionViewLayout: layout)
+        present(walthThru, animated: true, completion: nil)
+     
+        
+    }
     @objc func goToWeatherPage() {
         guard let url = URL(string: "https://www.accuweather.com") else {
             return
@@ -197,8 +211,8 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         InfoIcon.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant: -15).isActive = true
         InfoIcon.centerYAnchor.constraint(equalTo: pageControl.centerYAnchor).isActive = true
         
-        InfoIcon.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        InfoIcon.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        InfoIcon.widthAnchor.constraint(equalToConstant: 34).isActive = true
+        InfoIcon.heightAnchor.constraint(equalToConstant: 34).isActive = true
       
         
         
