@@ -12,7 +12,7 @@
         <!--Page View View Controller-->
         <scene sceneID="6eG-1t-Rgn">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="h21-Sj-4Es" customClass="PageViewViewController" customModule="WashMe" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="mainPageView" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="h21-Sj-4Es" customClass="PageViewViewController" customModule="WashMe" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcP-Tu-6jc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-887" y="69"/>

@@ -356,7 +356,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                 tView0.reloadData()
                 
             case nil:
-
+//
 //                let errorView = self.storyboard!.instantiateViewController(withIdentifier: "ErrorViewController")
 //                self.show(errorView , sender: errorView)
                 

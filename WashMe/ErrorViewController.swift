@@ -72,13 +72,13 @@ errorLabel.alpha = 0.1
         
        
         
-        UIView.animate(withDuration: 1.10, animations: {
+        UIView.animate(withDuration: 1.0, animations: {
             self.errorLabel.alpha = 1
             
             
         }, completion: { (Completed: Bool ) -> Void in
         
-            UIView.animate(withDuration: 1.10, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+            UIView.animate(withDuration: 1.0, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
         
             self.errorLabel.alpha = 0.1
                 

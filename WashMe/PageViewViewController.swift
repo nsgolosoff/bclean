@@ -62,8 +62,10 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
     func openWalkthru() {
  
         let layout = UICollectionViewFlowLayout()
-        let walthThru = WalkThru(collectionViewLayout: layout)
-        present(walthThru, animated: true, completion: nil)
+        layout.scrollDirection = .horizontal
+        let walkThru = WalkThru(collectionViewLayout: layout)
+        
+        present(walkThru, animated: true, completion: nil)
      
         
     }

@@ -17,6 +17,7 @@
 		8EAA7406205E6CA400B81AE2 /* massangersSetupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA7405205E6CA400B81AE2 /* massangersSetupCell.swift */; };
 		8EAEF1C4205C6CE80078B4AB /* buttonExtancion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAEF1C3205C6CE80078B4AB /* buttonExtancion.swift */; };
 		8EB81C40202EE23100245D5F /* CloudsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */; };
+		8EC37B1A206B90FC004497C8 /* WalkThruPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC37B19206B90FC004497C8 /* WalkThruPageCell.swift */; };
 		8EC8D63E2062D93B000275DD /* WalkThru.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC8D63D2062D93B000275DD /* WalkThru.swift */; };
 		8EE797332059D3BF00D1A62D /* popUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE797322059D3BF00D1A62D /* popUpController.swift */; };
 		E200BCD11F8823A200EC4D33 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E200BCD01F8823A200EC4D33 /* Reachability.swift */; };
@@ -87,6 +88,7 @@
 		8EAA7405205E6CA400B81AE2 /* massangersSetupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = massangersSetupCell.swift; sourceTree = "<group>"; };
 		8EAEF1C3205C6CE80078B4AB /* buttonExtancion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonExtancion.swift; sourceTree = "<group>"; };
 		8EB81C3F202EE23100245D5F /* CloudsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsAnimation.swift; sourceTree = "<group>"; };
+		8EC37B19206B90FC004497C8 /* WalkThruPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThruPageCell.swift; sourceTree = "<group>"; };
 		8EC8D63D2062D93B000275DD /* WalkThru.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThru.swift; sourceTree = "<group>"; };
 		8EE797322059D3BF00D1A62D /* popUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popUpController.swift; sourceTree = "<group>"; };
 		E200BCD01F8823A200EC4D33 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				8EE797322059D3BF00D1A62D /* popUpController.swift */,
 				8EAA7405205E6CA400B81AE2 /* massangersSetupCell.swift */,
 				8EC8D63D2062D93B000275DD /* WalkThru.swift */,
+				8EC37B19206B90FC004497C8 /* WalkThruPageCell.swift */,
 				E200BCD01F8823A200EC4D33 /* Reachability.swift */,
 				E289C4991F67D017005CF358 /* PageViewViewController.swift */,
 				E2F5CF811EE71B3C00174302 /* WeatherReciever.swift */,
@@ -437,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC37B1A206B90FC004497C8 /* WalkThruPageCell.swift in Sources */,
 				8EE797332059D3BF00D1A62D /* popUpController.swift in Sources */,
 				8EC8D63E2062D93B000275DD /* WalkThru.swift in Sources */,
 				8E1FB70A202EDCEE00D8C853 /* RainAnimations.swift in Sources */,

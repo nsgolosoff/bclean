@@ -7,7 +7,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       window = UIWindow()
+       window?.makeKeyAndVisible()
+        let mainViewCo = UIStoryboard(name: "Main", bundle: nil)
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let onboardView = WalkThru(collectionViewLayout: layout)
+        let launchedBefore = UserDefaults.standard.bool(forKey: "LaunchedBefore")
+        
+        
+        
+        if launchedBefore {
+            window?.rootViewController = mainViewCo.instantiateViewController(withIdentifier: "mainPageView")
+            
+        } else {
+            
+            window?.rootViewController = onboardView
+            UserDefaults.standard.set(true, forKey: "LaunchedBefore")
+        }
     
             
     
