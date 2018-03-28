@@ -47,7 +47,7 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         button.backgroundColor = .clear
         button.setImage(#imageLiteral(resourceName: "infoIcon"), for: .normal)
         button.layer.cornerRadius = 17
-        button.layer.borderWidth = 1.5
+        button.layer.borderWidth = 1.1
         button.layer.borderColor = UIColor(red: 10.0/255, green: 163.0/255, blue: 246.0/255, alpha: 1).cgColor
         button.layer.masksToBounds = true
         button.imageView?.contentMode = .scaleAspectFit
