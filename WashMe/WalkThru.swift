@@ -34,7 +34,7 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     
     private let nextButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("ВПЕРЕД", for: .normal)
+        button.setTitle("ВПЕРЁД", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.setTitleColor(UIColor.white, for: .normal)
@@ -111,8 +111,8 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         controlStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         if #available(iOS 11.0, *) {
-            readyButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 3).isActive = true
-        } else { readyButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 3).isActive=true
+            readyButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 6).isActive = true
+        } else { readyButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 6).isActive=true
             // Fallback on earlier versions
         }
         

@@ -94,7 +94,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
             let text = UILabel()
             text.text = tabMas[indexPath.row]
             text.textColor = .white
-            text.font = UIFont.boldSystemFont(ofSize: 15)
+            text.font = UIFont.boldSystemFont(ofSize: 19)
             
             text.textAlignment = .center
             text.translatesAutoresizingMaskIntoConstraints = false
@@ -360,19 +360,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
 //                let errorView = self.storyboard!.instantiateViewController(withIdentifier: "ErrorViewController")
 //                self.show(errorView , sender: errorView)
                 
-                varik?.changeBackground()
-                //imageMas[0] = #imageLiteral(resourceName: "logo.png")
-                //                tabMas[0] = weatherAPI.getLocName()
-                
-                tabMas[0] = "Самое время помыть!"
-                tabMas[1] = "Машина будет чистой более 5 дней"
+            
+                varik?.changeBackground2()
+                //tabMas[0] = weatherAPI.getLocName()
+                // imageMas[0] = #imageLiteral(resourceName: "logo.png")
+                tabMas[0] = "Сегодня лучше не мыть"
+                tabMas[1] = "Машина останется чистой всего на пару дней"
                 // tabMas[3] = weatherAPI.ints()
+                RemoveRain()
+                removeGrayClouds()
+                
+                RainAnimations()
                 
                 
-                //lname.text = weatherAPI.getLocName()
-                RemoveClouds()
-                CloudsAnimation()
-                
+                CloudsAnimation2()
                 
                 tView0.reloadData()
                 

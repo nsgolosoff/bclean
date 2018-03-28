@@ -45,14 +45,14 @@ class PageViewViewController: UIPageViewController, UIPageViewControllerDataSour
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .clear
-        button.setImage(#imageLiteral(resourceName: "Slice 1"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "infoIcon"), for: .normal)
         button.layer.cornerRadius = 17
-        button.layer.borderWidth = 1
+        button.layer.borderWidth = 1.5
         button.layer.borderColor = UIColor(red: 10.0/255, green: 163.0/255, blue: 246.0/255, alpha: 1).cgColor
         button.layer.masksToBounds = true
         button.imageView?.contentMode = .scaleAspectFit
         button.alpha = 1
-        button.imageEdgeInsets = UIEdgeInsets(top: 8, left:0 , bottom:8 , right: 0)
+        button.imageEdgeInsets = UIEdgeInsets(top: 3, left:0 , bottom:3, right: 0)
         button.setBackgroundColor(color: UIColor.gray.withAlphaComponent(0.35), forState: .highlighted)
         button.addTarget(self, action: #selector (openWalkthru), for: .touchUpInside)
         return button
