@@ -58,7 +58,12 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     }
     
     @objc private func dismissInfoView() {
-    dismiss(animated: true, completion: nil)
+     let mainViewCo = UIStoryboard(name: "Main", bundle: nil)
+        dismiss(animated: true, completion: nil)
+        present(mainViewCo.instantiateViewController(withIdentifier: "mainPageView"), animated: false, completion: nil)
+   
+        
+        
     }
     
     
