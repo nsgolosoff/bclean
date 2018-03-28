@@ -21,12 +21,12 @@ class PageCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(contentImage)
-        
-        contentImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        contentImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        contentImage.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        contentImage.widthAnchor.constraint(equalToConstant: 200).isActive = true
+//       // addSubview(contentImage)
+//        
+//        contentImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+//        contentImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+//        contentImage.heightAnchor.constraint(equalToConstant: 200).isActive = true
+//        contentImage.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
     }
     
