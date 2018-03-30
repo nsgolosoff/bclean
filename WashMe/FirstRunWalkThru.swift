@@ -1,13 +1,14 @@
 //
-//  WalkThru.swift
+//  fileee.swift
 //  WashMe
 //
-//  Created by Артур on 21.03.2018.
+//  Created by Артур on 28.03.2018.
 //  Copyright © 2018 Никита Голосов. All rights reserved.
 //
 
+
 import UIKit
-class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class  WalkThru1: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let cellID = "cellID"
     let blackview = UIView()
@@ -22,7 +23,7 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         return button
     }()
     
-
+    
     
     private let nextButton: UIButton = {
         let button = UIButton(type: .system)
@@ -76,7 +77,7 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         
         setupBottomControls()
         
-     
+        
     }
     private let readyButton: UIButton = {
         let button = UIButton(type: .system)
@@ -89,10 +90,10 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     }()
     
     @objc private func dismissInfoView() {
+        let mainViewCo = UIStoryboard(name: "Main", bundle: nil)
+        //dismiss(animated: true, completion: nil)
+        present(mainViewCo.instantiateViewController(withIdentifier: "mainPageView"), animated: false, completion: nil)
         
-        dismiss(animated: true, completion: nil)
-        
-    
     }
     
     private func setupBottomControls () {
@@ -140,3 +141,5 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     }
     
 }
+
+

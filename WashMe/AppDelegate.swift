@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainViewCo = UIStoryboard(name: "Main", bundle: nil)
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let onboardView = WalkThru(collectionViewLayout: layout)
+        let onboardView = WalkThru1(collectionViewLayout: layout)
         let launchedBefore = UserDefaults.standard.bool(forKey: "LaunchedBefore")
         
         
