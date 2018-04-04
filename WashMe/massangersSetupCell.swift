@@ -32,12 +32,11 @@ class IconsView: UIView,UICollectionViewDelegate,UICollectionViewDataSource,UICo
         cv.backgroundColor = .clear
         cv.delegate = self
         cv.dataSource = self
-        
-      
+     
         cv.alwaysBounceHorizontal = true
        
         layout.scrollDirection = .horizontal
-        cv.alwaysBounceHorizontal = true
+       
         cv.showsHorizontalScrollIndicator = false
        
         layout.minimumInteritemSpacing = 0

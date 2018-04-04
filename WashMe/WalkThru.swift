@@ -7,6 +7,12 @@
 //
 
 import UIKit
+
+struct Page {
+    let imageName : String
+    let headerText : String
+    let mainText : String
+}
 class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let cellID = "cellID"
@@ -73,6 +79,13 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellID")
         collectionView?.backgroundColor = UIColor(red: 53/255, green: 179/255, blue: 247/255, alpha: 1)
         collectionView?.isPagingEnabled = true
+        //automaticallyAdjustsScrollViewInsets = false
+        if #available(iOS 11.0, *) {
+           collectionView?.contentInsetAdjustmentBehavior = .never
+            
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
         
         setupBottomControls()
         
@@ -137,6 +150,9 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
+        
     }
+    
+   
     
 }

@@ -357,25 +357,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                 
             case nil:
 
-                let errorView = self.storyboard!.instantiateViewController(withIdentifier: "ErrorViewController")
-                self.show(errorView , sender: errorView)
+//                let errorView = self.storyboard!.instantiateViewController(withIdentifier: "ErrorViewController")
+//                self.show(errorView , sender: errorView)
                 
-            
-//                varik?.changeBackground2()
-//                //tabMas[0] = weatherAPI.getLocName()
-//                // imageMas[0] = #imageLiteral(resourceName: "logo.png")
-//                tabMas[0] = "Сегодня лучше не мыть"
-//                tabMas[1] = "Машина останется чистой всего на пару дней"
-//                // tabMas[3] = weatherAPI.ints()
-//                RemoveRain()
-//                removeGrayClouds()
-//                
-//                RainAnimations()
-//                
-//                
-//                CloudsAnimation2()
-//                
-//                tView0.reloadData()
+                
+                //                tabMas[0] = weatherAPI.getLocName()
+                
+                tabMas[0] = "Можно помыть"
+                tabMas[1] = "Машина будет чистой 3-4 дня"
+                //tabMas[3] = weatherAPI.ints()
+                
+                //lname.text = weatherAPI.getLocName()
+                RemoveClouds()
+                CloudsAnimation()
+                tView0.reloadData()
+                
                 
                 
                 
