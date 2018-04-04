@@ -10,6 +10,17 @@ import UIKit
 
 class PageCell: UICollectionViewCell {
     
+    var page: Page? {
+        didSet{
+            
+            guard let unwrappedPage = page
+                else { return}
+            
+            contentImage.image = UIImage(named: unwrappedPage.imageName)
+            headerLabel.text = unwrappedPage.headerText
+            mainText.text = unwrappedPage.mainText
+        }
+    }
    let contentImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named:"rainyDay")
@@ -18,7 +29,7 @@ class PageCell: UICollectionViewCell {
 
         return imageView
         }()
-    
+
     let headerLabel: UILabel = {
         let label = UILabel()
         label.text = "Только вчера помыли свою машину,\nа уже сегодня она грязная?"
@@ -39,7 +50,6 @@ class PageCell: UICollectionViewCell {
         text.textColor = .white
         text.isEditable = false
         text.isSelectable = false
-//        text.isScrollEnabled = false
         text.backgroundColor = .clear
         return text
     }()
@@ -56,13 +66,14 @@ class PageCell: UICollectionViewCell {
         addSubview(contentImage)
         addSubview(headerLabel)
         addSubview(mainText)
+    
         
         contentImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         contentImage.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -100).isActive = true
         contentImage.heightAnchor.constraint(equalToConstant: 200).isActive = true
         contentImage.widthAnchor.constraint(equalToConstant: frame.width).isActive = true
         
-        headerLabel.topAnchor.constraint(equalTo: contentImage.bottomAnchor, constant: 17).isActive = true
+        headerLabel.topAnchor.constraint(equalTo: contentImage.bottomAnchor, constant: 40).isActive = true
         headerLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 5).isActive = true
         headerLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -5).isActive = true
         
@@ -70,8 +81,7 @@ class PageCell: UICollectionViewCell {
         mainText.leftAnchor.constraint(equalTo: leftAnchor, constant: 10).isActive = true
         mainText.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
         mainText.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -60).isActive = true
-
-        
+   
     }
     
     

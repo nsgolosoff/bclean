@@ -361,18 +361,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
 //                self.show(errorView , sender: errorView)
                 
                 
+                varik?.changeBackground()
+                //imageMas[0] = #imageLiteral(resourceName: "logo.png")
                 //                tabMas[0] = weatherAPI.getLocName()
                 
-                tabMas[0] = "Можно помыть"
-                tabMas[1] = "Машина будет чистой 3-4 дня"
-                //tabMas[3] = weatherAPI.ints()
+                tabMas[0] = "Самое время помыть!"
+                tabMas[1] = "Машина будет чистой более 5 дней"
+                // tabMas[3] = weatherAPI.ints()
+                
                 
                 //lname.text = weatherAPI.getLocName()
                 RemoveClouds()
                 CloudsAnimation()
+                
+                
                 tView0.reloadData()
-                
-                
                 
                 
             

@@ -16,7 +16,12 @@ struct Page {
 class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let cellID = "cellID"
-    let blackview = UIView()
+    let Pages = [
+        Page(imageName: "rainyDay", headerText: "Инструкция: сегодня лучше не мыть", mainText: "Очень жаль, но если на экране появится данное сообщение, то лучше всего воздержаться от поездки на автомойку.\n\nПомыв машину сегодня, она будет грязной уже завтра или в лучшем случае послезавтра."),
+        Page(imageName: "normalDay", headerText: "Инструкция: можно помыть", mainText: "Если вы видите надпись 'Можно помыть', как показано на картинке, то помыв машину сегодня, она останется чистой в течение 3 - 4 дней.\n\nЭто не самое идеальное время для мытья машины, однако помыть можно."),
+        Page(imageName: "sunnyDay", headerText: "Инструкция: самое время помыть!", mainText: "Идеальное время для мытья машины. Смело езжайте на автомойку, потому что лучше времени, чем сейчас, просто нет - ваша машина останется чистой более 5 дней")
+//        Page(imageName: "", headerText: "", mainText: "Вот и все, очень просто, не так ли? В следующий раз, когда соберетесь помыть машину - загляните в наше приложение. Оно поможет не потратить впустую отведенные на мойку деньги, а самое главное - не потерять драгоценное время.\n\nТакая мелочь, как мойка машины, не должна отнимать много времени, это просто того не стоит. Цените свое время, удачи!")
+    ]
     
     private let previousButton: UIButton = {
         let button = UIButton(type: .system)
@@ -79,14 +84,15 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellID")
         collectionView?.backgroundColor = UIColor(red: 53/255, green: 179/255, blue: 247/255, alpha: 1)
         collectionView?.isPagingEnabled = true
+        pageControl.numberOfPages = Pages.count
         //automaticallyAdjustsScrollViewInsets = false
-        if #available(iOS 11.0, *) {
-           collectionView?.contentInsetAdjustmentBehavior = .never
-            
-        } else {
-            automaticallyAdjustsScrollViewInsets = false
-        }
-        
+//        if #available(iOS 11.0, *) {
+//           collectionView?.contentInsetAdjustmentBehavior = .never
+//
+//        } else {
+//            automaticallyAdjustsScrollViewInsets = false
+//        }
+//
         setupBottomControls()
         
      
@@ -140,11 +146,13 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return Pages.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! PageCell
+        let page = Pages[indexPath.item]
+        cell.page = page
         return cell
     }
     
