@@ -17,10 +17,11 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     
     let cellID = "cellID"
     let Pages = [
+        Page(imageName: "dirtyCar", headerText: "Только вчера помыли свою машину,\nа уже сегодня она грязная?", mainText: "Не беда! Наше приложение подскажет вам когда именно стоит помыть машину, чтобы избежать подобной ситуации, сохранив свои деньги и время."),
         Page(imageName: "rainyDay", headerText: "Инструкция: сегодня лучше не мыть", mainText: "Очень жаль, но если на экране появится данное сообщение, то лучше всего воздержаться от поездки на автомойку.\n\nПомыв машину сегодня, она будет грязной уже завтра или в лучшем случае послезавтра."),
         Page(imageName: "normalDay", headerText: "Инструкция: можно помыть", mainText: "Если вы видите надпись 'Можно помыть', как показано на картинке, то помыв машину сегодня, она останется чистой в течение 3 - 4 дней.\n\nЭто не самое идеальное время для мытья машины, однако помыть можно."),
-        Page(imageName: "sunnyDay", headerText: "Инструкция: самое время помыть!", mainText: "Идеальное время для мытья машины. Смело езжайте на автомойку, потому что лучше времени, чем сейчас, просто нет - ваша машина останется чистой более 5 дней")
-//        Page(imageName: "", headerText: "", mainText: "Вот и все, очень просто, не так ли? В следующий раз, когда соберетесь помыть машину - загляните в наше приложение. Оно поможет не потратить впустую отведенные на мойку деньги, а самое главное - не потерять драгоценное время.\n\nТакая мелочь, как мойка машины, не должна отнимать много времени, это просто того не стоит. Цените свое время, удачи!")
+        Page(imageName: "sunnyDay", headerText: "Инструкция: самое время помыть!", mainText: "Идеальное время для мытья машины. Смело езжайте на автомойку, потому что лучше времени, чем сейчас, просто нет - ваша машина останется чистой более 5 дней."),
+        Page(imageName: "lastPage", headerText: "Пора начинать", mainText: "Вот и все, очень просто, не так ли? В следующий раз, когда соберетесь помыть машину - загляните в наше приложение. Оно поможет не потратить впустую отведенные на мойку деньги, а самое главное - не потерять драгоценное время.\n\nТакая мелочь, как мойка машины, не должна отнимать много времени, это просто того не стоит. Цените свое время, удачи!")
     ]
     
     private let previousButton: UIButton = {
@@ -46,7 +47,7 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
     }()
     
     @objc private func scrollToNextPage() {
-        let nextIndex = min(pageControl.currentPage + 1, 3)
+        let nextIndex = min(pageControl.currentPage + 1, 4)
         let indexPath = IndexPath(item: nextIndex, section: 0)
         pageControl.currentPage = nextIndex
         collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
@@ -82,7 +83,7 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         super.viewDidLoad()
         
         collectionView?.register(PageCell.self, forCellWithReuseIdentifier: "cellID")
-        collectionView?.backgroundColor = UIColor(red: 53/255, green: 179/255, blue: 247/255, alpha: 1)
+        collectionView?.backgroundColor = UIColor(red: 3/255, green: 185/255, blue: 250/255, alpha: 1)
         collectionView?.isPagingEnabled = true
         pageControl.numberOfPages = Pages.count
         //automaticallyAdjustsScrollViewInsets = false
@@ -155,6 +156,7 @@ class  WalkThru: UICollectionViewController, UICollectionViewDelegateFlowLayout 
         cell.page = page
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)

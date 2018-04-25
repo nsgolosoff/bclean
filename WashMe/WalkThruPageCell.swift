@@ -26,6 +26,7 @@ class PageCell: UICollectionViewCell {
         imageView.image = UIImage(named:"rainyDay")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+     
 
         return imageView
         }()

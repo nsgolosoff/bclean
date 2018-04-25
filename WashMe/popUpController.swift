@@ -67,7 +67,7 @@ class settupPopUp: NSObject {
           
              cancelButton.frame = CGRect(x: 7, y: window.frame.height+160 , width: window.frame.width-14, height: 50)
           
-      cancelButton.layoutIfNeeded()
+             cancelButton.layoutIfNeeded()
        
             UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.blackview.alpha = 0.3
